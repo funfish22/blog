@@ -3,7 +3,152 @@
  * http://sachinchoolur.github.io/lightGallery/
  * Copyright (c) 2016 Sachin N; 
  * @license Apache 2.0 
- */(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.Lightgallery = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return 0 s})({1:[function(require,module,exports){ (function (global, factory) { if (typeof define="==" "function" && define.amd) define(['exports'], factory); } else exports !="=" "undefined") factory(exports); var mod="{" exports: {} }; factory(mod.exports); global.lgutils="mod.exports;" })(this, function (exports) 'use strict'; object.defineproperty(exports, "__esmodule", value: true }); * *@todo remove from window and document. update on off functions window.getattribute="function" (label) return window[label]; window.setattribute="function" (label, value) window[label]="value;" document.getattribute="function" document[label]; document.setattribute="function" document[label]="value;" utils="{" wrap: wrap(el, classname) (!el) return; wrapper="document.createElement('div');" wrapper.classname="className;" el.parentnode.insertbefore(wrapper, el); el.parentnode.removechild(el); wrapper.appendchild(el); }, addclass: addclass(el, (el.classlist) el.classlist.add(classname); el.classname +=" " classname; removeclass: removeclass(el, el.classlist.remove(classname); regexp('(^|\\b)' classname.split(' ').join('|') '(\\b|$)', 'gi'), ' '); hasclass: hasclass(el, el.classlist.contains(classname); new regexp('(^| )' classname '( |$)', 'gi').test(el.classname); false; ex transform transitiontimingfunction setvendor: setvendor(el, property, el.style[property.charat(0).tolowercase() property.slice(1)]="value;" el.style['webkit' property]="value;" el.style['moz' el.style['ms' el.style['o' trigger: trigger(el, event) detail="arguments.length" <="2" || arguments[2]="==" undefined ? null : arguments[2]; customevent="new" customevent(event, detail: el.dispatchevent(customevent); listener: uid: on: on(el, events, fn) events.split(' ').foreach(function (event) _id="el.getAttribute('lg-event-uid')" ''; utils.listener.uid++; utils.listener.uid; el.setattribute('lg-event-uid', _id); utils.listener[event utils.listener.uid]="fn;" el.addeventlistener(event.split('.')[0], fn, false); off: off(el, (_id) for (var i="0;" _id.length; i++) (_id[i]) _event="event" _id[i]; (_event.substring(0, 1)="==" '.') key in utils.listener) (utils.listener.hasownproperty(key)) (key.split('.').indexof(_event.split('.')[1])> -1) {
+ */(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.Lightgallery = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function (global, factory) {
+    if (typeof define === "function" && define.amd) {
+        define(['exports'], factory);
+    } else if (typeof exports !== "undefined") {
+        factory(exports);
+    } else {
+        var mod = {
+            exports: {}
+        };
+        factory(mod.exports);
+        global.lgUtils = mod.exports;
+    }
+})(this, function (exports) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    /*
+     *@todo remove function from window and document. Update on and off functions
+     */
+    window.getAttribute = function (label) {
+        return window[label];
+    };
+
+    window.setAttribute = function (label, value) {
+        window[label] = value;
+    };
+
+    document.getAttribute = function (label) {
+        return document[label];
+    };
+
+    document.setAttribute = function (label, value) {
+        document[label] = value;
+    };
+
+    var utils = {
+        wrap: function wrap(el, className) {
+            if (!el) {
+                return;
+            }
+
+            var wrapper = document.createElement('div');
+            wrapper.className = className;
+            el.parentNode.insertBefore(wrapper, el);
+            el.parentNode.removeChild(el);
+            wrapper.appendChild(el);
+        },
+
+        addClass: function addClass(el, className) {
+            if (!el) {
+                return;
+            }
+
+            if (el.classList) {
+                el.classList.add(className);
+            } else {
+                el.className += ' ' + className;
+            }
+        },
+
+        removeClass: function removeClass(el, className) {
+            if (!el) {
+                return;
+            }
+
+            if (el.classList) {
+                el.classList.remove(className);
+            } else {
+                el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+            }
+        },
+
+        hasClass: function hasClass(el, className) {
+            if (el.classList) {
+                return el.classList.contains(className);
+            } else {
+                return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+            }
+
+            return false;
+        },
+
+        // ex Transform
+        // ex TransitionTimingFunction
+        setVendor: function setVendor(el, property, value) {
+            if (!el) {
+                return;
+            }
+
+            el.style[property.charAt(0).toLowerCase() + property.slice(1)] = value;
+            el.style['webkit' + property] = value;
+            el.style['moz' + property] = value;
+            el.style['ms' + property] = value;
+            el.style['o' + property] = value;
+        },
+
+        trigger: function trigger(el, event) {
+            var detail = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
+
+            if (!el) {
+                return;
+            }
+
+            var customEvent = new CustomEvent(event, {
+                detail: detail
+            });
+            el.dispatchEvent(customEvent);
+        },
+
+        Listener: {
+            uid: 0
+        },
+        on: function on(el, events, fn) {
+            if (!el) {
+                return;
+            }
+
+            events.split(' ').forEach(function (event) {
+                var _id = el.getAttribute('lg-event-uid') || '';
+                utils.Listener.uid++;
+                _id += '&' + utils.Listener.uid;
+                el.setAttribute('lg-event-uid', _id);
+                utils.Listener[event + utils.Listener.uid] = fn;
+                el.addEventListener(event.split('.')[0], fn, false);
+            });
+        },
+
+        off: function off(el, event) {
+            if (!el) {
+                return;
+            }
+
+            var _id = el.getAttribute('lg-event-uid');
+            if (_id) {
+                _id = _id.split('&');
+                for (var i = 0; i < _id.length; i++) {
+                    if (_id[i]) {
+                        var _event = event + _id[i];
+                        if (_event.substring(0, 1) === '.') {
+                            for (var key in utils.Listener) {
+                                if (utils.Listener.hasOwnProperty(key)) {
+                                    if (key.split('.').indexOf(_event.split('.')[1]) > -1) {
                                         el.removeEventListener(key.split('.')[0], utils.Listener[key]);
                                         el.setAttribute('lg-event-uid', el.getAttribute('lg-event-uid').replace('&' + _id[i], ''));
                                         delete utils.Listener[key];
@@ -587,14 +732,57 @@
     Plugin.prototype.preload = function (index) {
         var i = 1;
         var j = 1;
-        for (i = 1; i <= this.s.preload; i++) { if (i>= this.items.length - index) {
+        for (i = 1; i <= this.s.preload; i++) {
+            if (i >= this.items.length - index) {
                 break;
             }
 
             this.loadContent(index + i, false, 0);
         }
 
-        for (j = 1; j <= 0 this.s.preload; j++) { if (index - j < 0) break; } this.loadcontent(index j, false, 0); }; ** * @desc load slide content into slide. @param {number} index of the {boolean} rec true call loadcontent() function again. delay for adding complete class. it is except first time. plugin.prototype.loadcontent="function" (index, rec, delay) var _this="this;" _hasposter="false;" _img; _src; _poster; _srcset; _sizes; _html; getresponsivesrc="function" getresponsivesrc(srcitms) rswidth="[];" rssrc="[];" (var i="0;" srcitms.length; i++) __src="srcItms[i].split('" '); manage empty space (__src[0]="==" '') __src.splice(0, 1); rssrc.push(__src[0]); rswidth.push(__src[1]); wwidth="window.innerWidth;" rswidth.length; (parseint(rswidth[j], 10)> wWidth) {
+        for (j = 1; j <= this.s.preload; j++) {
+            if (index - j < 0) {
+                break;
+            }
+
+            this.loadContent(index - j, false, 0);
+        }
+    };
+
+    /**
+     *  @desc Load slide content into slide.
+     *  @param {Number} index - index of the slide.
+     *  @param {Boolean} rec - if true call loadcontent() function again.
+     *  @param {Boolean} delay - delay for adding complete class. it is 0 except first time.
+     */
+    Plugin.prototype.loadContent = function (index, rec, delay) {
+
+        var _this = this;
+        var _hasPoster = false;
+        var _img;
+        var _src;
+        var _poster;
+        var _srcset;
+        var _sizes;
+        var _html;
+        var getResponsiveSrc = function getResponsiveSrc(srcItms) {
+            var rsWidth = [];
+            var rsSrc = [];
+            for (var i = 0; i < srcItms.length; i++) {
+                var __src = srcItms[i].split(' ');
+
+                // Manage empty space
+                if (__src[0] === '') {
+                    __src.splice(0, 1);
+                }
+
+                rsSrc.push(__src[0]);
+                rsWidth.push(__src[1]);
+            }
+
+            var wWidth = window.innerWidth;
+            for (var j = 0; j < rsWidth.length; j++) {
+                if (parseInt(rsWidth[j], 10) > wWidth) {
                     _src = rsSrc[j];
                     break;
                 }
@@ -653,7 +841,7 @@
         var _isVideo = _this.isVideo(_src, index);
         if (!_lgUtils2.default.hasClass(_this.___slide[index], 'lg-loaded')) {
             if (iframe) {
-                _this.___slide[index].insertAdjacentHTML('afterbegin', '<div class="lg-video-cont" style="max-width:' + _this.s.iframeMaxWidth + '"><div class="lg-video"><iframe class="lg-object" frameborder="0" src="' + _src + '" allowfullscreen="true"></iframe></div></div>');
+                _this.___slide[index].insertAdjacentHTML('afterbegin', '<div class="lg-video-cont" style="max-width:' + _this.s.iframeMaxWidth + '"><div class="lg-video"><iframe class="lg-object" frameborder="0" src="' + _src + '"  allowfullscreen="true"></iframe></div></div>');
             } else if (_hasPoster) {
                 var videoClass = '';
                 if (_isVideo && _isVideo.youtube) {
@@ -664,7 +852,7 @@
                     videoClass = 'lg-has-html5';
                 }
 
-                _this.___slide[index].insertAdjacentHTML('beforeend', '<div class="lg-video-cont ' + videoClass + ' "><div class="lg-video"><span class="lg-video-play"></span><img class="lg-object lg-has-poster" src="' + _poster + '"></div></div>');
+                _this.___slide[index].insertAdjacentHTML('beforeend', '<div class="lg-video-cont ' + videoClass + ' "><div class="lg-video"><span class="lg-video-play"></span><img class="lg-object lg-has-poster" src="' + _poster + '" /></div></div>');
             } else if (_isVideo) {
                 _this.___slide[index].insertAdjacentHTML('beforeend', '<div class="lg-video-cont "><div class="lg-video"></div></div>');
                 _lgUtils2.default.trigger(_this.el, 'hasVideo', {
@@ -673,7 +861,7 @@
                     html: _html
                 });
             } else {
-                _this.___slide[index].insertAdjacentHTML('beforeend', '<div class="lg-img-wrap"><img class="lg-object lg-image" src="' + _src + '"></div>');
+                _this.___slide[index].insertAdjacentHTML('beforeend', '<div class="lg-img-wrap"><img class="lg-object lg-image" src="' + _src + '" /></div>');
             }
 
             _lgUtils2.default.trigger(_this.el, 'onAferAppendSlide', {
@@ -1407,4 +1595,4 @@
 });
 
 },{"./lg-utils":1}]},{},[2])(2)
-});</====></=></=></=></=></r.length;o++)s(r[o]);return>
+});
