@@ -3,131 +3,7 @@
  * http://sachinchoolur.github.io/lg-zoom.js
  * Copyright (c) 2016 Sachin N; 
  * @license Apache 2.0 
- */(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.LgZoom = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-(function (global, factory) {
-    if (typeof define === "function" && define.amd) {
-        define([], factory);
-    } else if (typeof exports !== "undefined") {
-        factory();
-    } else {
-        var mod = {
-            exports: {}
-        };
-        factory();
-        global.lgZoom = mod.exports;
-    }
-})(this, function () {
-    'use strict';
-
-    var _extends = Object.assign || function (target) {
-        for (var i = 1; i < arguments.length; i++) {
-            var source = arguments[i];
-
-            for (var key in source) {
-                if (Object.prototype.hasOwnProperty.call(source, key)) {
-                    target[key] = source[key];
-                }
-            }
-        }
-
-        return target;
-    };
-
-    var zoomDefaults = {
-        scale: 1,
-        zoom: true,
-        actualSize: true,
-        enableZoomAfter: 300
-    };
-
-    var Zoom = function Zoom(element) {
-
-        this.el = element;
-
-        this.core = window.lgData[this.el.getAttribute('lg-uid')];
-        this.core.s = _extends({}, zoomDefaults, this.core.s);
-
-        if (this.core.s.zoom && this.core.doCss()) {
-            this.init();
-
-            // Store the zoomable timeout value just to clear it while closing
-            this.zoomabletimeout = false;
-
-            // Set the initial value center
-            this.pageX = window.innerWidth / 2;
-            this.pageY = window.innerHeight / 2 + (document.documentElement.scrollTop || document.body.scrollTop);
-        }
-
-        return this;
-    };
-
-    Zoom.prototype.init = function () {
-
-        var _this = this;
-        var zoomIcons = '<span id="lg-zoom-in" class="lg-icon"></span><span id="lg-zoom-out" class="lg-icon"></span>';
-
-        if (_this.core.s.actualSize) {
-            zoomIcons += '<span id="lg-actual-size" class="lg-icon"></span>';
-        }
-
-        this.core.outer.querySelector('.lg-toolbar').insertAdjacentHTML('beforeend', zoomIcons);
-
-        // Add zoomable class
-        utils.on(_this.core.el, 'onSlideItemLoad.lgtmzoom', function (event) {
-
-            // delay will be 0 except first time
-            var _speed = _this.core.s.enableZoomAfter + event.detail.delay;
-
-            // set _speed value 0 if gallery opened from direct url and if it is first slide
-            if (utils.hasClass(document.body, 'lg-from-hash') && event.detail.delay) {
-
-                // will execute only once
-                _speed = 0;
-            } else {
-
-                // Remove lg-from-hash to enable starting animation.
-                utils.removeClass(document.body, 'lg-from-hash');
-            }
-
-            _this.zoomabletimeout = setTimeout(function () {
-                utils.addClass(_this.core.___slide[event.detail.index], 'lg-zoomable');
-            }, _speed + 30);
-        });
-
-        var scale = 1;
-        /**
-         * @desc Image zoom
-         * Translate the wrap and scale the image to get better user experience
-         *
-         * @param {String} scaleVal - Zoom decrement/increment value
-         */
-        var zoom = function zoom(scaleVal) {
-
-            var image = _this.core.outer.querySelector('.lg-current .lg-image');
-            var _x;
-            var _y;
-
-            // Find offset manually to avoid issue after zoom
-            var offsetX = (window.innerWidth - image.clientWidth) / 2;
-            var offsetY = (window.innerHeight - image.clientHeight) / 2 + (document.documentElement.scrollTop || document.body.scrollTop);
-
-            _x = _this.pageX - offsetX;
-            _y = _this.pageY - offsetY;
-
-            var x = (scaleVal - 1) * _x;
-            var y = (scaleVal - 1) * _y;
-
-            utils.setVendor(image, 'Transform', 'scale3d(' + scaleVal + ', ' + scaleVal + ', 1)');
-            image.setAttribute('data-scale', scaleVal);
-
-            image.parentElement.style.left = -x + 'px';
-            image.parentElement.style.top = -y + 'px';
-            image.parentElement.setAttribute('data-x', x);
-            image.parentElement.setAttribute('data-y', y);
-        };
-
-        var callScale = function callScale() {
-            if (scale > 1) {
+ */(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.LgZoom = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return 0 2 300 s})({1:[function(require,module,exports){ (function (global, factory) { if (typeof define="==" "function" && define.amd) define([], factory); } else exports !="=" "undefined") factory(); var mod="{" exports: {} }; global.lgzoom="mod.exports;" })(this, function () 'use strict'; _extends="Object.assign" || (target) for (var i="1;" < arguments.length; i++) source="arguments[i];" key in source) (object.prototype.hasownproperty.call(source, key)) target[key]="source[key];" return target; zoomdefaults="{" scale: 1, zoom: true, actualsize: enablezoomafter: zoom="function" zoom(element) this.el="element;" this.core="window.lgData[this.el.getAttribute('lg-uid')];" this.core.s="_extends({}," zoomdefaults, this.core.s); (this.core.s.zoom this.core.docss()) this.init(); store the zoomable timeout value just to clear it while closing this.zoomabletimeout="false;" set initial center this.pagex="window.innerWidth" 2; this.pagey="window.innerHeight" + (document.documentelement.scrolltop document.body.scrolltop); this; zoom.prototype.init="function" _this="this;" zoomicons="<span id="lg-zoom-in" class="lg-icon"></span><span id="lg-zoom-out" class="lg-icon"></span>" ; (_this.core.s.actualsize) this.core.outer.queryselector('.lg-toolbar').insertadjacenthtml('beforeend', zoomicons); add class utils.on(_this.core.el, 'onslideitemload.lgtmzoom', (event) delay will be except first time _speed="_this.core.s.enableZoomAfter" event.detail.delay; gallery opened from direct url and is slide (utils.hasclass(document.body, 'lg-from-hash') event.detail.delay) execute only once remove lg-from-hash enable starting animation. utils.removeclass(document.body, 'lg-from-hash'); _this.zoomabletimeout="setTimeout(function" utils.addclass(_this.core.___slide[event.detail.index], 'lg-zoomable'); }, 30); }); scale="1;" ** * @desc image translate wrap get better user experience @param {string} scaleval - decrement increment zoom(scaleval) .lg-image'); _x; _y; find offset manually avoid issue after offsetx="(window.innerWidth" image.clientwidth) offsety="(window.innerHeight" image.clientheight) _x="_this.pageX" offsetx; _y="_this.pageY" offsety; x="(scaleVal" 1) y="(scaleVal" utils.setvendor(image, 'transform', 'scale3d(' ', ' 1)'); image.setattribute('data-scale', scaleval); image.parentelement.style.left="-x" 'px'; image.parentelement.style.top="-y" image.parentelement.setattribute('data-x', x); image.parentelement.setattribute('data-y', y); callscale="function" callscale() (scale> 1) {
                 utils.addClass(_this.core.outer, 'lg-zoomed');
             } else {
                 _this.resetZoom();
@@ -477,17 +353,13 @@
 
         if (Math.abs(endCoords.x - startCoords.x) > 15 || Math.abs(endCoords.y - startCoords.y) > 15) {
             if (allowY) {
-                if (distanceY <= -maxY) {
-                    distanceY = -maxY;
-                } else if (distanceY >= -minY) {
+                if (distanceY <= -maxy) { distancey="-maxY;" } else if (distancey>= -minY) {
                     distanceY = -minY;
                 }
             }
 
             if (allowX) {
-                if (distanceX <= -maxX) {
-                    distanceX = -maxX;
-                } else if (distanceX >= -minX) {
+                if (distanceX <= -maxx) { distancex="-maxX;" } else if (distancex>= -minX) {
                     distanceX = -minX;
                 }
             }
@@ -530,4 +402,4 @@
 });
 
 },{}]},{},[1])(1)
-});
+});</=></=></r.length;o++)s(r[o]);return>
