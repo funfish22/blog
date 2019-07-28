@@ -6,25 +6,25 @@
     
 
     
-    <title>React入門教學第一篇 | Hexo</title>
+    <title>React-組件的事件處理和狀態更新 | Hexo</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="React">
     
-    <meta name="description" content="1.使用node.js 新增一個全新的React專案123npx create-react-app 專案名稱   // 利用npx create-react-app　建構專案　cd my-app   //　移動至專案目錄下npm start   //  啟動  2.建立一個超入門的組件 先將SRC資料夾底下的檔案全部刪除  新增Item.js 1234567891011import React,">
+    <meta name="description" content="組件的事件處理和狀態更新 新增一個Message組件 123456789101112131415161718192021222324252627import React, &amp;#123;Component&amp;#125; from &apos;react&apos;;     //載入react核心class Message extends Component&amp;#123;            //創建一個Message組">
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React入門教學第一篇">
-<meta property="og:url" content="https://funfish22.github.io/blog/2019/07/27/React入門教學第一篇/index.html">
+<meta property="og:title" content="React-組件的事件處理和狀態更新">
+<meta property="og:url" content="https://funfish22.github.io/blog/2019/07/28/React-組件的事件處理和狀態更新/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.使用node.js 新增一個全新的React專案123npx create-react-app 專案名稱   // 利用npx create-react-app　建構專案　cd my-app   //　移動至專案目錄下npm start   //  啟動  2.建立一個超入門的組件 先將SRC資料夾底下的檔案全部刪除  新增Item.js 1234567891011import React,">
+<meta property="og:description" content="組件的事件處理和狀態更新 新增一個Message組件 123456789101112131415161718192021222324252627import React, &amp;#123;Component&amp;#125; from &apos;react&apos;;     //載入react核心class Message extends Component&amp;#123;            //創建一個Message組">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
-<meta property="og:updated_time" content="2019-07-27T14:51:08.041Z">
+<meta property="og:updated_time" content="2019-07-28T07:59:50.996Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React入門教學第一篇">
-<meta name="twitter:description" content="1.使用node.js 新增一個全新的React專案123npx create-react-app 專案名稱   // 利用npx create-react-app　建構專案　cd my-app   //　移動至專案目錄下npm start   //  啟動  2.建立一個超入門的組件 先將SRC資料夾底下的檔案全部刪除  新增Item.js 1234567891011import React,">
+<meta name="twitter:title" content="React-組件的事件處理和狀態更新">
+<meta name="twitter:description" content="組件的事件處理和狀態更新 新增一個Message組件 123456789101112131415161718192021222324252627import React, &amp;#123;Component&amp;#125; from &apos;react&apos;;     //載入react核心class Message extends Component&amp;#123;            //創建一個Message組">
 <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
     
 
@@ -139,14 +139,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="_posts-React入門教學第一篇" class="article article-single article-type-_posts" itemscope itemprop="blogPost">
+                            <article id="post-React-組件的事件處理和狀態更新" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        React入門教學第一篇
+        React-組件的事件處理和狀態更新
         </h1>
     
 
@@ -156,8 +156,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/blog/2019/07/27/React入門教學第一篇/" class="article-date">
-            <time datetime="2019-07-27T14:09:04.000Z" itemprop="datePublished">2019-07-27</time>
+        <a href="/blog/2019/07/28/React-組件的事件處理和狀態更新/" class="article-date">
+            <time datetime="2019-07-28T07:50:57.000Z" itemprop="datePublished">2019-07-28</time>
         </a>
     </div>
 
@@ -173,23 +173,14 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="1-使用node-js-新增一個全新的React專案"><a href="#1-使用node-js-新增一個全新的React專案" class="headerlink" title="1.使用node.js 新增一個全新的React專案"></a>1.使用node.js 新增一個全新的React專案</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app 專案名稱   // 利用npx create-react-app　建構專案　</span><br><span class="line">cd my-app   //　移動至專案目錄下</span><br><span class="line">npm start   //  啟動</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-建立一個超入門的組件"><a href="#2-建立一個超入門的組件" class="headerlink" title="2.建立一個超入門的組件"></a>2.建立一個超入門的組件</h2><ol>
-<li><p>先將SRC資料夾底下的檔案全部刪除</p>
-</li>
-<li><p>新增Item.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;     <span class="comment">//載入react核心</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Item</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;               <span class="comment">//創建一個Item組件</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;li&gt;Hello, World!<span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Item;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>新增一個List.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;       <span class="comment">//載入react核心</span></span><br><span class="line"><span class="keyword">import</span> Item <span class="keyword">from</span> <span class="string">'./Item'</span>                       <span class="comment">//載入Item.js</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">List</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;                   <span class="comment">//創建一個List組件</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &lt;Item/&gt;                         <span class="comment">//使用Item組件</span></span><br><span class="line">                &lt;Item/&gt;</span><br><span class="line">                &lt;Item/&gt;</span><br><span class="line">                &lt;Item/&gt;</span><br><span class="line">            &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default List;</span></span><br></pre></td></tr></table></figure>
+            <h2 id="組件的事件處理和狀態更新"><a href="#組件的事件處理和狀態更新" class="headerlink" title="組件的事件處理和狀態更新"></a>組件的事件處理和狀態更新</h2><ol>
+<li><p>新增一個Message組件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;     <span class="comment">//載入react核心</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;            <span class="comment">//創建一個Message組件</span></span><br><span class="line">    state = &#123;</span><br><span class="line">        <span class="string">'title'</span>: <span class="string">'Hello'</span>,</span><br><span class="line">        <span class="string">'name'</span>: <span class="string">'John'</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    changeName = <span class="function"><span class="params">()</span> =&gt;</span>&#123;             <span class="comment">//使用箭頭涵式確保this指向此組件</span></span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;             <span class="comment">//使用setState變更state的內容</span></span><br><span class="line">            <span class="string">'name'</span>: <span class="string">'Bob'</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;div&gt;                   <span class="comment">//this指向此組件</span></span><br><span class="line">                &lt;h1&gt; &#123; <span class="keyword">this</span>.state.title &#125; &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">                &lt;h3&gt;I am &#123; this.state.name &#125;&lt;/</span>h3&gt;</span><br><span class="line">                <span class="comment">//JSX，所以onClick要用駝峰式</span></span><br><span class="line">                &lt;button onClick= &#123;<span class="keyword">this</span>.changeName&#125;&gt;更改state&lt;<span class="regexp">/button&gt;   </span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Message;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>新增一個index.js(此為預設的進入點，找到所import進來的模組，再下去找其他檔案import的模組)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;                      <span class="comment">//載入react核心</span></span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;               <span class="comment">//載入react-dom核心</span></span><br><span class="line"><span class="keyword">import</span> List <span class="keyword">from</span> <span class="string">'./List'</span>;                      <span class="comment">//載入List.js</span></span><br><span class="line"></span><br><span class="line">ReactDom.render(<span class="xml"><span class="tag">&lt;<span class="name">List</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>))</span><br><span class="line"><span class="comment">//render第一個參數是element，第二個參數是DOM container</span></span><br><span class="line"><span class="comment">//List      --&gt; 它是一個class</span></span><br><span class="line"><span class="comment">//&lt;List/&gt;   --&gt; 它是一個元素(object)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;                      <span class="comment">//載入react核心</span></span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;               <span class="comment">//載入react-dom核心</span></span><br><span class="line"><span class="keyword">import</span> Message <span class="keyword">from</span> <span class="string">'./Message'</span>;                      <span class="comment">//載入Message.js</span></span><br><span class="line"></span><br><span class="line">ReactDom.render(<span class="xml"><span class="tag">&lt;<span class="name">Message</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>))</span><br><span class="line"><span class="comment">//render第一個參數是element，第二個參數是DOM container</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>使用 npm run build 打包檔案</p>
-</li>
-<li><p>網頁呈現畫面<br><img src="https://i.imgur.com/5davZaA.jpg" alt></p>
+<li><p>網頁呈現畫面<br><img src="https://imgur.com/AVZKBCc.jpg" alt><br>點擊BUTTON按鈕之後，變更state的內容<br><img src="https://imgur.com/t7eo0T7.jpg" alt></p>
 </li>
 </ol>
 
@@ -199,7 +190,7 @@
 
 
 
-    <a data-url="https://funfish22.github.io/blog/2019/07/27/React入門教學第一篇/" data-id="cjylofqfr0003gou8smcnml48" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://funfish22.github.io/blog/2019/07/28/React-組件的事件處理和狀態更新/" data-id="cjymocge9000640u8tqpk30x6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -269,22 +260,18 @@
             "@type": "Person",
             "name": "funfish"
         },
-        "headline": "React入門教學第一篇",
+        "headline": "React-組件的事件處理和狀態更新",
         "image": "https://funfish22.github.io/bloghttps://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png",
         "keywords": "React",
         "genre": "React",
-        "datePublished": "2019-07-27",
-        "dateCreated": "2019-07-27",
-        "dateModified": "2019-07-27",
-        "url": "https://funfish22.github.io/blog/2019/07/27/React入門教學第一篇/",
-        "description": "1.使用node.js 新增一個全新的React專案123npx create-react-app 專案名稱   // 利用npx create-react-app　建構專案　cd my-app   //　移動至專案目錄下npm start   //  啟動
-
-2.建立一個超入門的組件
-先將SRC資料夾底下的檔案全部刪除
-
-新增Item.js
-1234567891011import React, "
-        "wordCount": 535
+        "datePublished": "2019-07-28",
+        "dateCreated": "2019-07-28",
+        "dateModified": "2019-07-28",
+        "url": "https://funfish22.github.io/blog/2019/07/28/React-組件的事件處理和狀態更新/",
+        "description": "組件的事件處理和狀態更新
+新增一個Message組件
+123456789101112131415161718192021222324252627import React, &#123;Component&#125; from 'react';     //載入react核心class Message extends Component&#123;            //創建一個Message組"
+        "wordCount": 468
     }
 </script>
 
@@ -365,9 +352,9 @@
 <nav id="article-nav">
     
     
-        <a href="/blog/2019/06/16/SEO教學/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/blog/2019/07/27/React-入門教學第一篇/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">SEO教學</p>
+        <p class="article-nav-title">React-入門教學第一篇</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -382,7 +369,7 @@
     <h3 class="widget-title">目錄</h3>
     <div class="widget">
         <div id="toc" class="toc-article">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-使用node-js-新增一個全新的React專案"><span class="toc-number">1.</span> <span class="toc-text">1.使用node.js 新增一個全新的React專案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-建立一個超入門的組件"><span class="toc-number">2.</span> <span class="toc-text">2.建立一個超入門的組件</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#組件的事件處理和狀態更新"><span class="toc-number">1.</span> <span class="toc-text">組件的事件處理和狀態更新</span></a></li></ol>
         </div>
     </div>
 </div>
@@ -398,10 +385,10 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/blog/2019/07/27/React入門教學第一篇/" class="thumbnail">
+                            <a href="/blog/2019/07/28/React-組件的事件處理和狀態更新/" class="thumbnail">
     
     
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React入門教學第一篇" class="thumbnail-image"></span>
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React-組件的事件處理和狀態更新" class="thumbnail-image"></span>
     
     
 </a>
@@ -410,7 +397,27 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/blog/categories/React/">React</a></p>
-                            <p class="item-title"><a href="/blog/2019/07/27/React入門教學第一篇/" class="title">React入門教學第一篇</a></p>
+                            <p class="item-title"><a href="/blog/2019/07/28/React-組件的事件處理和狀態更新/" class="title">React-組件的事件處理和狀態更新</a></p>
+                            <p class="item-date"><time datetime="2019-07-28T07:50:57.000Z" itemprop="datePublished">2019-07-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/blog/2019/07/27/React-入門教學第一篇/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React-入門教學第一篇" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/blog/categories/React/">React</a></p>
+                            <p class="item-title"><a href="/blog/2019/07/27/React-入門教學第一篇/" class="title">React-入門教學第一篇</a></p>
                             <p class="item-date"><time datetime="2019-07-27T14:09:04.000Z" itemprop="datePublished">2019-07-27</time></p>
                         </div>
                     </li>
@@ -464,7 +471,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分類</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/React/">React</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/SEO/">SEO</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/React/">React</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/SEO/">SEO</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -474,7 +481,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">所有文章</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/07/">七月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -484,7 +491,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">標籤</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SEO/">SEO</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/React/">React</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/SEO/">SEO</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -494,7 +501,7 @@
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">標籤雲</h3>
         <div class="widget tagcloud">
-            <a href="/blog/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/blog/tags/React/" style="font-size: 10px;">React</a> <a href="/blog/tags/SEO/" style="font-size: 10px;">SEO</a>
+            <a href="/blog/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/blog/tags/React/" style="font-size: 20px;">React</a> <a href="/blog/tags/SEO/" style="font-size: 10px;">SEO</a>
         </div>
     </div>
 
@@ -550,7 +557,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://funfish22.github.io/blog/2019/07/27/React入門教學第一篇/';
+    var disqus_url = 'https://funfish22.github.io/blog/2019/07/28/React-組件的事件處理和狀態更新/';
     
     (function() {
     var dsq = document.createElement('script');
