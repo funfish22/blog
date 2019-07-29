@@ -6,7 +6,7 @@
     
 
     
-    <title>React-組件的事件處理和狀態更新 | Hexo</title>
+    <title>React-組件的事件處理和狀態更新 | funfish</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="React-組件的事件處理和狀態更新">
 <meta property="og:url" content="https://funfish22.github.io/blog/2019/07/28/React-組件的事件處理和狀態更新/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="funfish">
 <meta property="og:description" content="組件的事件處理和狀態更新 新增一個Message組件 123456789101112131415161718192021222324252627282930import React, &amp;#123;Component&amp;#125; from &apos;react&apos;;     //載入react核心class Message extends Component&amp;#123;            //創建一個Me">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
@@ -29,7 +29,7 @@
     
 
     
-        <link rel="alternate" href="/" title="Hexo" type="application/atom+xml">
+        <link rel="alternate" href="/" title="funfish" type="application/atom+xml">
     
 
     
@@ -178,7 +178,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;     <span class="comment">//載入react核心</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;            <span class="comment">//創建一個Message組件</span></span><br><span class="line">    <span class="comment">//組件狀態</span></span><br><span class="line">    state = &#123;</span><br><span class="line">        <span class="string">'title'</span>: <span class="string">'Hello'</span>,</span><br><span class="line">        <span class="string">'name'</span>: <span class="string">'John'</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//自訂涵式</span></span><br><span class="line">    changeName = <span class="function"><span class="params">()</span> =&gt;</span>&#123;             <span class="comment">//使用箭頭涵式確保this指向此組件</span></span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;             <span class="comment">//使用setState變更state的內容</span></span><br><span class="line">            <span class="string">'name'</span>: <span class="string">'Bob'</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//生命週期內的涵式</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;div&gt;                   <span class="comment">//this指向此組件</span></span><br><span class="line">                &lt;h1&gt; &#123; <span class="keyword">this</span>.state.title &#125; &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">                &lt;h3&gt;I am &#123; this.state.name &#125;&lt;/</span>h3&gt;</span><br><span class="line">                <span class="comment">//JSX，所以onClick要用駝峰式</span></span><br><span class="line">                &lt;button onClick= &#123;<span class="keyword">this</span>.changeName&#125;&gt;更改state&lt;<span class="regexp">/button&gt;   </span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Message;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>新增一個index.js(此為預設的進入點，找到所import進來的模組，再下去找其他檔案import的模組)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;                      <span class="comment">//載入react核心</span></span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;               <span class="comment">//載入react-dom核心</span></span><br><span class="line"><span class="keyword">import</span> Message <span class="keyword">from</span> <span class="string">'./Message'</span>;                      <span class="comment">//載入Message.js</span></span><br><span class="line"></span><br><span class="line">ReactDom.render(&lt;Message/&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>))</span><br><span class="line"><span class="comment">//render第一個參數是element，第二個參數是DOM container</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;                      <span class="comment">//載入react核心</span></span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;               <span class="comment">//載入react-dom核心</span></span><br><span class="line"><span class="keyword">import</span> Message <span class="keyword">from</span> <span class="string">'./Message'</span>;                      <span class="comment">//載入Message.js</span></span><br><span class="line"></span><br><span class="line">ReactDom.render(<span class="xml"><span class="tag">&lt;<span class="name">Message</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>))</span><br><span class="line"><span class="comment">//render第一個參數是element，第二個參數是DOM container</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>網頁呈現畫面<br><img src="https://imgur.com/AVZKBCc.jpg" alt><br>點擊BUTTON按鈕之後，變更state的內容<br><img src="https://imgur.com/t7eo0T7.jpg" alt></p>
 </li>
@@ -190,7 +190,7 @@
 
 
 
-    <a data-url="https://funfish22.github.io/blog/2019/07/28/React-組件的事件處理和狀態更新/" data-id="cjyohkrpu0003a0u8v37osd77" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://funfish22.github.io/blog/2019/07/28/React-組件的事件處理和狀態更新/" data-id="cjyoi1ovz0006pgu868cr2kbi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -271,7 +271,7 @@
         "description": "組件的事件處理和狀態更新
 新增一個Message組件
 123456789101112131415161718192021222324252627282930import React, &#123;Component&#125; from 'react';     //載入react核心class Message extends Component&#123;            //創建一個Me"
-        "wordCount": 486
+        "wordCount": 489
     }
 </script>
 
