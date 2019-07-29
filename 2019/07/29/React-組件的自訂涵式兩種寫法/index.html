@@ -6,25 +6,25 @@
     
 
     
-    <title>React-組件的事件處理和狀態更新 | Hexo</title>
+    <title>React-組件的自訂涵式兩種寫法 | Hexo</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="React">
     
-    <meta name="description" content="組件的事件處理和狀態更新 新增一個Message組件 123456789101112131415161718192021222324252627282930import React, &amp;#123;Component&amp;#125; from &apos;react&apos;;     //載入react核心class Message extends Component&amp;#123;            //創建一個Me">
+    <meta name="description" content="組件的自訂涵式兩種寫法第一種(箭頭涵式)詳細資料請看上一篇文章(React-組件的事件處理和狀態更新) 第二種(一般涵式)使用一般涵式，則需要將this重新綁定，所以建議使用箭頭涵式。 1234567891011121314151617181920212223242526272829303132333435363738394041424344import React, &amp;#123;Componen">
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React-組件的事件處理和狀態更新">
-<meta property="og:url" content="https://funfish22.github.io/blog/2019/07/28/React-組件的事件處理和狀態更新/index.html">
+<meta property="og:title" content="React-組件的自訂涵式兩種寫法">
+<meta property="og:url" content="https://funfish22.github.io/blog/2019/07/29/React-組件的自訂涵式兩種寫法/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="組件的事件處理和狀態更新 新增一個Message組件 123456789101112131415161718192021222324252627282930import React, &amp;#123;Component&amp;#125; from &apos;react&apos;;     //載入react核心class Message extends Component&amp;#123;            //創建一個Me">
+<meta property="og:description" content="組件的自訂涵式兩種寫法第一種(箭頭涵式)詳細資料請看上一篇文章(React-組件的事件處理和狀態更新) 第二種(一般涵式)使用一般涵式，則需要將this重新綁定，所以建議使用箭頭涵式。 1234567891011121314151617181920212223242526272829303132333435363738394041424344import React, &amp;#123;Componen">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
-<meta property="og:updated_time" content="2019-07-29T14:06:39.123Z">
+<meta property="og:updated_time" content="2019-07-29T14:22:39.882Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React-組件的事件處理和狀態更新">
-<meta name="twitter:description" content="組件的事件處理和狀態更新 新增一個Message組件 123456789101112131415161718192021222324252627282930import React, &amp;#123;Component&amp;#125; from &apos;react&apos;;     //載入react核心class Message extends Component&amp;#123;            //創建一個Me">
+<meta name="twitter:title" content="React-組件的自訂涵式兩種寫法">
+<meta name="twitter:description" content="組件的自訂涵式兩種寫法第一種(箭頭涵式)詳細資料請看上一篇文章(React-組件的事件處理和狀態更新) 第二種(一般涵式)使用一般涵式，則需要將this重新綁定，所以建議使用箭頭涵式。 1234567891011121314151617181920212223242526272829303132333435363738394041424344import React, &amp;#123;Componen">
 <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
     
 
@@ -139,14 +139,14 @@
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-React-組件的事件處理和狀態更新" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-React-組件的自訂涵式兩種寫法" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        React-組件的事件處理和狀態更新
+        React-組件的自訂涵式兩種寫法
         </h1>
     
 
@@ -156,8 +156,8 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/blog/2019/07/28/React-組件的事件處理和狀態更新/" class="article-date">
-            <time datetime="2019-07-28T07:50:57.000Z" itemprop="datePublished">2019-07-28</time>
+        <a href="/blog/2019/07/29/React-組件的自訂涵式兩種寫法/" class="article-date">
+            <time datetime="2019-07-29T14:06:13.000Z" itemprop="datePublished">2019-07-29</time>
         </a>
     </div>
 
@@ -173,24 +173,16 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="組件的事件處理和狀態更新"><a href="#組件的事件處理和狀態更新" class="headerlink" title="組件的事件處理和狀態更新"></a>組件的事件處理和狀態更新</h2><ol>
-<li><p>新增一個Message組件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;     <span class="comment">//載入react核心</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;            <span class="comment">//創建一個Message組件</span></span><br><span class="line">    <span class="comment">//組件狀態</span></span><br><span class="line">    state = &#123;</span><br><span class="line">        <span class="string">'title'</span>: <span class="string">'Hello'</span>,</span><br><span class="line">        <span class="string">'name'</span>: <span class="string">'John'</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//自訂涵式</span></span><br><span class="line">    changeName = <span class="function"><span class="params">()</span> =&gt;</span>&#123;             <span class="comment">//使用箭頭涵式確保this指向此組件</span></span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;             <span class="comment">//使用setState變更state的內容</span></span><br><span class="line">            <span class="string">'name'</span>: <span class="string">'Bob'</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//生命週期內的涵式</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;div&gt;                   <span class="comment">//this指向此組件</span></span><br><span class="line">                &lt;h1&gt; &#123; <span class="keyword">this</span>.state.title &#125; &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">                &lt;h3&gt;I am &#123; this.state.name &#125;&lt;/</span>h3&gt;</span><br><span class="line">                <span class="comment">//JSX，所以onClick要用駝峰式</span></span><br><span class="line">                &lt;button onClick= &#123;<span class="keyword">this</span>.changeName&#125;&gt;更改state&lt;<span class="regexp">/button&gt;   </span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Message;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>新增一個index.js(此為預設的進入點，找到所import進來的模組，再下去找其他檔案import的模組)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;                      <span class="comment">//載入react核心</span></span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;               <span class="comment">//載入react-dom核心</span></span><br><span class="line"><span class="keyword">import</span> Message <span class="keyword">from</span> <span class="string">'./Message'</span>;                      <span class="comment">//載入Message.js</span></span><br><span class="line"></span><br><span class="line">ReactDom.render(&lt;Message/&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>))</span><br><span class="line"><span class="comment">//render第一個參數是element，第二個參數是DOM container</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>網頁呈現畫面<br><img src="https://imgur.com/AVZKBCc.jpg" alt><br>點擊BUTTON按鈕之後，變更state的內容<br><img src="https://imgur.com/t7eo0T7.jpg" alt></p>
-</li>
-</ol>
-
+            <h2 id="組件的自訂涵式兩種寫法"><a href="#組件的自訂涵式兩種寫法" class="headerlink" title="組件的自訂涵式兩種寫法"></a>組件的自訂涵式兩種寫法</h2><h3 id="第一種-箭頭涵式"><a href="#第一種-箭頭涵式" class="headerlink" title="第一種(箭頭涵式)"></a>第一種(箭頭涵式)</h3><p>詳細資料請看上一篇文章(React-組件的事件處理和狀態更新)</p>
+<h3 id="第二種-一般涵式"><a href="#第二種-一般涵式" class="headerlink" title="第二種(一般涵式)"></a>第二種(一般涵式)</h3><p>使用一般涵式，則需要將this重新綁定，<br>所以建議使用箭頭涵式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;     <span class="comment">//載入react核心</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;            <span class="comment">//創建一個Message組件</span></span><br><span class="line">    組件狀態</span><br><span class="line">    state = &#123;</span><br><span class="line">        <span class="string">'title'</span>: <span class="string">'Hello'</span>,</span><br><span class="line">        <span class="string">'name'</span>: <span class="string">'John'</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//constructor（建構子）是個隨著 class 一同建立並初始化物件的特殊方法</span></span><br><span class="line">    <span class="comment">//預設的建構子長得像這樣</span></span><br><span class="line">    <span class="comment">//constructor(props)&#123;</span></span><br><span class="line">    <span class="comment">//    super(props)</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">        <span class="keyword">super</span>(props)</span><br><span class="line">        <span class="comment">//super() 必須在使用 this 以前被呼叫。不這樣的話會發生錯誤。</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//將this.changeName永遠綁定(bind)在自己身上(this)</span></span><br><span class="line">        <span class="keyword">this</span>.changeName = <span class="keyword">this</span>.changeName.bind(<span class="keyword">this</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//自訂涵式(使用一般涵式)</span></span><br><span class="line">    <span class="comment">//如果沒有使用constructor()，則this綁定在buttn身上</span></span><br><span class="line">    changeName() &#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            <span class="string">'name'</span>: <span class="string">'Bob'</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//生命週期內的涵式</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;div&gt;                   <span class="comment">//this指向此組件</span></span><br><span class="line">                &lt;h1&gt; &#123; <span class="keyword">this</span>.state.title &#125; &lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">                &lt;h3&gt;I am &#123; this.state.name &#125;&lt;/</span>h3&gt;</span><br><span class="line">                &lt;button onClick= &#123;<span class="keyword">this</span>.changeName&#125;&gt;更改state&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Message;</span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="https://funfish22.github.io/blog/2019/07/28/React-組件的事件處理和狀態更新/" data-id="cjyohfgrk000380u8hwwhxkvk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://funfish22.github.io/blog/2019/07/29/React-組件的自訂涵式兩種寫法/" data-id="cjyohfgrq000780u8hunoolre" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -260,18 +252,18 @@
             "@type": "Person",
             "name": "funfish"
         },
-        "headline": "React-組件的事件處理和狀態更新",
+        "headline": "React-組件的自訂涵式兩種寫法",
         "image": "https://funfish22.github.io/bloghttps://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png",
         "keywords": "React",
         "genre": "React",
-        "datePublished": "2019-07-28",
-        "dateCreated": "2019-07-28",
+        "datePublished": "2019-07-29",
+        "dateCreated": "2019-07-29",
         "dateModified": "2019-07-29",
-        "url": "https://funfish22.github.io/blog/2019/07/28/React-組件的事件處理和狀態更新/",
-        "description": "組件的事件處理和狀態更新
-新增一個Message組件
-123456789101112131415161718192021222324252627282930import React, &#123;Component&#125; from 'react';     //載入react核心class Message extends Component&#123;            //創建一個Me"
-        "wordCount": 486
+        "url": "https://funfish22.github.io/blog/2019/07/29/React-組件的自訂涵式兩種寫法/",
+        "description": "組件的自訂涵式兩種寫法第一種(箭頭涵式)詳細資料請看上一篇文章(React-組件的事件處理和狀態更新)
+第二種(一般涵式)使用一般涵式，則需要將this重新綁定，所以建議使用箭頭涵式。
+1234567891011121314151617181920212223242526272829303132333435363738394041424344import React, &#123;Componen"
+        "wordCount": 452
     }
 </script>
 
@@ -351,20 +343,10 @@
         
 <nav id="article-nav">
     
-        <a href="/blog/2019/07/29/React-組件的自訂涵式兩種寫法/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            React-組件的自訂涵式兩種寫法
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/blog/2019/07/27/React-入門教學第一篇/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/blog/2019/07/28/React-組件的事件處理和狀態更新/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">React-入門教學第一篇</p>
+        <p class="article-nav-title">React-組件的事件處理和狀態更新</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -379,7 +361,7 @@
     <h3 class="widget-title">目錄</h3>
     <div class="widget">
         <div id="toc" class="toc-article">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#組件的事件處理和狀態更新"><span class="toc-number">1.</span> <span class="toc-text">組件的事件處理和狀態更新</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#組件的自訂涵式兩種寫法"><span class="toc-number">1.</span> <span class="toc-text">組件的自訂涵式兩種寫法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一種-箭頭涵式"><span class="toc-number">1.1.</span> <span class="toc-text">第一種(箭頭涵式)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二種-一般涵式"><span class="toc-number">1.2.</span> <span class="toc-text">第二種(一般涵式)</span></a></li></ol></li></ol>
         </div>
     </div>
 </div>
@@ -587,7 +569,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://funfish22.github.io/blog/2019/07/28/React-組件的事件處理和狀態更新/';
+    var disqus_url = 'https://funfish22.github.io/blog/2019/07/29/React-組件的自訂涵式兩種寫法/';
     
     (function() {
     var dsq = document.createElement('script');
