@@ -6,17 +6,26 @@
     
 
     
-    <title>分類: React | funfish</title>
+    <title>React-props父層屬性傳到子層 | funfish</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="funfish">
-<meta property="og:url" content="https://funfish22.github.io/blog/categories/React/index.html">
+        <meta name="keywords" content="React">
+    
+    <meta name="description" content="1.利用props父層屬性傳到子層 父層List.js 123456789101112131415161718192021import React, &amp;#123; Component &amp;#125; from &apos;react&apos;;       //載入react核心import Item from &apos;./Item&apos;                       //載入Item.jsclass List">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React-props父層屬性傳到子層">
+<meta property="og:url" content="https://funfish22.github.io/blog/2019/07/30/React-props父層屬性傳到子層/index.html">
 <meta property="og:site_name" content="funfish">
+<meta property="og:description" content="1.利用props父層屬性傳到子層 父層List.js 123456789101112131415161718192021import React, &amp;#123; Component &amp;#125; from &apos;react&apos;;       //載入react核心import Item from &apos;./Item&apos;                       //載入Item.jsclass List">
 <meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
+<meta property="og:updated_time" content="2019-07-30T15:05:41.925Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="funfish">
+<meta name="twitter:title" content="React-props父層屬性傳到子層">
+<meta name="twitter:description" content="1.利用props父層屬性傳到子層 父層List.js 123456789101112131415161718192021import React, &amp;#123; Component &amp;#125; from &apos;react&apos;;       //載入react核心import Item from &apos;./Item&apos;                       //載入Item.jsclass List">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
     
 
     
@@ -147,228 +156,159 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-folder-open"></i>分類: <em class="page-title-link">React</em>
+    <a class="page-title-link" href="/blog/categories/React/">React</a>
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-React-props父層屬性傳到子層" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/blog/archives/2019" class="archive-year"><i class="icon fa fa-calendar-o"></i>2019</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/blog/2019/07/30/React-props父層屬性傳到子層/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React-props父層屬性傳到子層" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://funfish22.github.io/blog/2019/07/30/React-props父層屬性傳到子層/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/blog/categories/React/">React</a>
-            </div>
-            <div class="date"><time datetime="2019-07-30T14:52:15.000Z" itemprop="datePublished">2019-07-30</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/blog/2019/07/30/React-props父層屬性傳到子層/">React-props父層屬性傳到子層</a>
+        React-props父層屬性傳到子層
         </h1>
     
 
-        <p class="article-excerpt">
-            1.利用props父層屬性傳到子層
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/blog/2019/07/30/React-props父層屬性傳到子層/" class="article-date">
+            <time datetime="2019-07-30T14:52:15.000Z" itemprop="datePublished">2019-07-30</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/blog/tags/React/">React</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="1-利用props父層屬性傳到子層"><a href="#1-利用props父層屬性傳到子層" class="headerlink" title="1.利用props父層屬性傳到子層"></a>1.利用props父層屬性傳到子層</h2><ol>
+<li><p>父層<br>List.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;       <span class="comment">//載入react核心</span></span><br><span class="line"><span class="keyword">import</span> Item <span class="keyword">from</span> <span class="string">'./Item'</span>                       <span class="comment">//載入Item.js</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">List</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;                   <span class="comment">//創建一個List組件</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                <span class="comment">//text和num是要傳到子層的屬性，</span></span><br><span class="line">                <span class="comment">//屬性內的文字如果是用&#123;&#125;包起來則是代表數字</span></span><br><span class="line">                <span class="comment">//&lt;Item&gt;文字&lt;/Item&gt; 文字也可以傳到子層</span></span><br><span class="line"></span><br><span class="line">                <span class="comment">//使用Item組件</span></span><br><span class="line">                &lt;Item text=<span class="string">"學習vue"</span> num=<span class="string">"100"</span>&gt;筆記vue&lt;<span class="regexp">/Item&gt;           </span></span><br><span class="line"><span class="regexp">                &lt;Item text="學習react" num=&#123;100&#125;&gt;筆記react&lt;/</span>Item&gt;</span><br><span class="line">                &lt;Item text=<span class="string">"學習angular"</span>&gt;筆記angular&lt;<span class="regexp">/Item&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/u</span>l&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> List;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子層<br>Item.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;     <span class="comment">//載入react核心</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Item</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;               <span class="comment">//創建一個Item組件</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;li&gt;</span><br><span class="line">                <span class="comment">//接收父層傳來的屬性(text, num)</span></span><br><span class="line">                &#123;<span class="keyword">this</span>.props.text&#125; &#123;<span class="keyword">this</span>.props.num + <span class="number">1</span>&#125;</span><br><span class="line">                <span class="comment">//也可以接收父層傳來的文字</span></span><br><span class="line">                &lt;p&gt;&#123;<span class="keyword">this</span>.props.children&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>li&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Item;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>網頁呈現畫面<br><img src="https://imgur.com/pTUr7OT.jpg" alt></p>
+<p> (1)text和num是傳到子層的屬性，<br> 屬性內的文字如果是用{}包起來則是代表數字，<br> (2)<item>文字</item> 文字也可以傳到子層<br> 段落P的內容this.props.children<br><img src="https://imgur.com/KqMvYw5.jpg" alt></p>
+</li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://funfish22.github.io/blog/2019/07/30/React-props父層屬性傳到子層/" data-id="cjypyfgj30002lku868k8sd68" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "funfish"
+        },
+        "headline": "React-props父層屬性傳到子層",
+        "image": "https://funfish22.github.io/bloghttps://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png",
+        "keywords": "React",
+        "genre": "React",
+        "datePublished": "2019-07-30",
+        "dateCreated": "2019-07-30",
+        "dateModified": "2019-07-30",
+        "url": "https://funfish22.github.io/blog/2019/07/30/React-props父層屬性傳到子層/",
+        "description": "1.利用props父層屬性傳到子層
 父層List.js
-123456789101112131415161718192021import React, &#123; Component &#125; from 'react';       //載入react核心import Item from './Item'                       //載入Item.jsclass List 
-        </p>
-    </div>
+123456789101112131415161718192021import React, &#123; Component &#125; from 'react';       //載入react核心import Item from './Item'                       //載入Item.jsclass List "
+        "wordCount": 532
+    }
+</script>
+
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/blog/2019/07/29/React-組件的自訂涵式兩種寫法/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React-組件的自訂涵式兩種寫法" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://funfish22.github.io/blog/2019/07/29/React-組件的自訂涵式兩種寫法/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/blog/categories/React/">React</a>
-            </div>
-            <div class="date"><time datetime="2019-07-29T14:06:13.000Z" itemprop="datePublished">2019-07-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/blog/2019/07/29/React-組件的自訂涵式兩種寫法/">React-組件的自訂涵式兩種寫法</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            組件的自訂涵式兩種寫法第一種(箭頭涵式)詳細資料請看上一篇文章(React-組件的事件處理和狀態更新)
-第二種(一般涵式)使用一般涵式，則需要將this重新綁定，所以建議使用箭頭涵式。
-1234567891011121314151617181920212223242526272829303132333435363738394041424344import React, &#123;Componen
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/blog/2019/07/28/React-組件的事件處理和狀態更新/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React-組件的事件處理和狀態更新" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://funfish22.github.io/blog/2019/07/28/React-組件的事件處理和狀態更新/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/blog/categories/React/">React</a>
-            </div>
-            <div class="date"><time datetime="2019-07-28T07:50:57.000Z" itemprop="datePublished">2019-07-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/blog/2019/07/28/React-組件的事件處理和狀態更新/">React-組件的事件處理和狀態更新</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            組件的事件處理和狀態更新
-新增一個Message組件
-123456789101112131415161718192021222324252627282930import React, &#123;Component&#125; from 'react';     //載入react核心class Message extends Component&#123;            //創建一個Me
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/blog/2019/07/27/React-入門教學第一篇/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React-入門教學第一篇" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier data-disqus-url="https://funfish22.github.io/blog/2019/07/27/React-入門教學第一篇/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/blog/categories/React/">React</a>
-            </div>
-            <div class="date"><time datetime="2019-07-27T14:09:04.000Z" itemprop="datePublished">2019-07-27</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/blog/2019/07/27/React-入門教學第一篇/">React-入門教學第一篇</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            1.使用node.js 新增一個全新的React專案123npx create-react-app 專案名稱   // 利用npx create-react-app　建構專案　cd my-app   //　移動至專案目錄下npm start   //  啟動
-
-2.建立一個超入門的組件
-先將SRC資料夾底下的檔案全部刪除
-
-新增Item.js
-1234567891011import React, 
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
+    </section>
 
 
 
@@ -431,10 +371,32 @@ ga('send', 'pageview');
         </ul>
     </div>
     
+        
+<nav id="article-nav">
+    
+    
+        <a href="/blog/2019/07/29/React-組件的自訂涵式兩種寫法/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">React-組件的自訂涵式兩種寫法</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
     <div class="widgets-container">
         
             
                 
+<div class="widget-wrap widget-list">
+    <h3 class="widget-title">目錄</h3>
+    <div class="widget">
+        <div id="toc" class="toc-article">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-利用props父層屬性傳到子層"><span class="toc-number">1.</span> <span class="toc-text">1.利用props父層屬性傳到子層</span></a></li></ol>
+        </div>
+    </div>
+</div>
+
 
             
                 
@@ -638,11 +600,13 @@ ga('send', 'pageview');
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'https://funfish22.github.io/blog/2019/07/30/React-props父層屬性傳到子層/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
