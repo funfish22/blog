@@ -208,7 +208,7 @@ ga('send', 'pageview');
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Counter</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props)&#123;             <span class="comment">//父層傳到子層的方法</span></span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="keyword">this</span>.state= &#123;</span><br><span class="line">            num: props.initNum,     <span class="comment">//父層傳到子層的屬性</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    addNum = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            num: <span class="keyword">this</span>.state.num + <span class="number">1</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;h1&gt;&#123;<span class="keyword">this</span>.state.num&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">                &lt;button type="button" onClick=&#123;this.addNum&#125;&gt;+1&lt;/</span>button&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Counter;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>index.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> Counter <span class="keyword">from</span> <span class="string">'./Counter'</span></span><br><span class="line"></span><br><span class="line">ReactDom.render(&lt;Counter initNum=&#123;10&#125;/&gt;, document.getElementById('root'))</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> Counter <span class="keyword">from</span> <span class="string">'./Counter'</span></span><br><span class="line"></span><br><span class="line">ReactDom.render(<span class="xml"><span class="tag">&lt;<span class="name">Counter</span> <span class="attr">initNum</span>=<span class="string">&#123;10&#125;/</span>&gt;</span>, document.getElementById('root'))</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -228,7 +228,7 @@ ga('send', 'pageview');
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Counter</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props)&#123;             <span class="comment">//父層傳到子層的方法</span></span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="keyword">this</span>.state= &#123;</span><br><span class="line">            num: props.initNum,     <span class="comment">//父層傳到子層的屬性</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    addNum = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            num: <span class="keyword">this</span>.state.num + <span class="number">1</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;h1&gt;&#123;<span class="keyword">this</span>.state.num&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">                &lt;button type="button" onClick=&#123;this.addNum&#125;&gt;+1&lt;/</span>button&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Counter.defaultProps = &#123;        /</span><span class="regexp">/指定initNum預設值為多少</span></span><br><span class="line"><span class="regexp">    initNum: 5,</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Counter;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>index.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> Counter <span class="keyword">from</span> <span class="string">'./Counter'</span></span><br><span class="line"></span><br><span class="line">ReactDom.render(&lt;Counter/&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> Counter <span class="keyword">from</span> <span class="string">'./Counter'</span></span><br><span class="line"></span><br><span class="line">ReactDom.render(<span class="xml"><span class="tag">&lt;<span class="name">Counter</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>))</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -248,7 +248,7 @@ ga('send', 'pageview');
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> PropTypes <span class="keyword">from</span> <span class="string">'prop-types'</span>;         <span class="comment">//檢查型別需要載入此模組</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Counter</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props)&#123;             <span class="comment">//父層傳到子層的方法</span></span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="keyword">this</span>.state= &#123;</span><br><span class="line">            num: props.initNum,     <span class="comment">//父層傳到子層的屬性</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    addNum = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            num: <span class="keyword">this</span>.state.num + <span class="number">1</span>,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;h1&gt;&#123;<span class="keyword">this</span>.state.num&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">                &lt;button type="button" onClick=&#123;this.addNum&#125;&gt;+1&lt;/</span>button&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Counter.defaultProps = &#123;            /</span><span class="regexp">/指定initNum預設值為多少</span></span><br><span class="line"><span class="regexp">    initNum: 10,</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Counter.propTypes = &#123;               /</span><span class="regexp">/判斷型別是否為數字</span></span><br><span class="line"><span class="regexp">    initNum: PropTypes.number,      </span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Counter;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>index.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> Counter <span class="keyword">from</span> <span class="string">'./Counter'</span></span><br><span class="line"></span><br><span class="line">ReactDom.render(&lt;Counter initNum='10'/&gt;, document.getElementById('root'))</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> Counter <span class="keyword">from</span> <span class="string">'./Counter'</span></span><br><span class="line"></span><br><span class="line">ReactDom.render(<span class="xml"><span class="tag">&lt;<span class="name">Counter</span> <span class="attr">initNum</span>=<span class="string">'10'</span>/&gt;</span>, document.getElementById('root'))</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -263,7 +263,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://funfish22.github.io/2019/08/05/React-props基本應用/" data-id="cjz8kc3ya0002b0u8mdjjf7j0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://funfish22.github.io/2019/08/05/React-props基本應用/" data-id="ck7efira9000eb8u8zcaad9bv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -344,7 +344,7 @@ ga('send', 'pageview');
         "description": "基本應用1.用props指定初始值
 Counter.js
 1234567891011121314151617181920212223242526272829import React, &#123;Component&#125; from 'react';class Counter extends Component&#123;    constructor(props)&#123;        "
-        "wordCount": 1828
+        "wordCount": 1841
     }
 </script>
 
@@ -468,6 +468,26 @@ Counter.js
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2020/03/05/React-TypeScript、ESLint、Prettier-初始化設定/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React TypeScript、ESLint、Prettier 初始化設定" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/03/05/React-TypeScript、ESLint、Prettier-初始化設定/" class="title">React TypeScript、ESLint、Prettier 初始化設定</a></p>
+                            <p class="item-date"><time datetime="2020-03-05T07:14:25.000Z" itemprop="datePublished">2020-03-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2019/08/12/React-搭配Redux簡易教學/" class="thumbnail">
     
     
@@ -545,26 +565,6 @@ Counter.js
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/07/29/React-組件的自訂涵式兩種寫法/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React-組件的自訂涵式兩種寫法" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
-                            <p class="item-title"><a href="/2019/07/29/React-組件的自訂涵式兩種寫法/" class="title">React-組件的自訂涵式兩種寫法</a></p>
-                            <p class="item-date"><time datetime="2019-07-29T14:06:13.000Z" itemprop="datePublished">2019-07-29</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -574,7 +574,7 @@ Counter.js
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分類</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SEO/">SEO</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SEO/">SEO</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -584,7 +584,7 @@ Counter.js
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">所有文章</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -594,7 +594,7 @@ Counter.js
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">標籤</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/">SEO</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/">SEO</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -641,7 +641,7 @@ Counter.js
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2019 funfish</p>
+                <p>&copy; 2020 funfish</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
             <div class="footer-plugins">

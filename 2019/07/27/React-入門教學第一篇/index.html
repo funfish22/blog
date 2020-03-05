@@ -209,13 +209,13 @@ ga('send', 'pageview');
 <li><p>先將SRC資料夾底下的檔案全部刪除</p>
 </li>
 <li><p>新增Item.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;     <span class="comment">//載入react核心</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Item</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;               <span class="comment">//創建一個Item組件</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;li&gt;Hello, World!<span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Item;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;     <span class="comment">//載入react核心</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Item</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;               <span class="comment">//創建一個Item組件</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;li&gt;Hello, World!&lt;/li&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Item;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>新增一個List.js</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;       <span class="comment">//載入react核心</span></span><br><span class="line"><span class="keyword">import</span> Item <span class="keyword">from</span> <span class="string">'./Item'</span>                       <span class="comment">//載入Item.js</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">List</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;                   <span class="comment">//創建一個List組件</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                &lt;Item/&gt;                         <span class="comment">//使用Item組件</span></span><br><span class="line">                &lt;Item/&gt;</span><br><span class="line">                &lt;Item/&gt;</span><br><span class="line">                &lt;Item/&gt;</span><br><span class="line">            &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default List;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>新增一個index.js(此為預設的進入點，找到所import進來的模組，再下去找其他檔案import的模組)</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;                      <span class="comment">//載入react核心</span></span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;               <span class="comment">//載入react-dom核心</span></span><br><span class="line"><span class="keyword">import</span> List <span class="keyword">from</span> <span class="string">'./List'</span>;                      <span class="comment">//載入List.js</span></span><br><span class="line"></span><br><span class="line">ReactDom.render(<span class="xml"><span class="tag">&lt;<span class="name">List</span>/&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>))</span><br><span class="line"><span class="comment">//render第一個參數是element，第二個參數是DOM container</span></span><br><span class="line"><span class="comment">//List      --&gt; 它是一個class</span></span><br><span class="line"><span class="comment">//&lt;List/&gt;   --&gt; 它是一個元素(object)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;                      <span class="comment">//載入react核心</span></span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;               <span class="comment">//載入react-dom核心</span></span><br><span class="line"><span class="keyword">import</span> List <span class="keyword">from</span> <span class="string">'./List'</span>;                      <span class="comment">//載入List.js</span></span><br><span class="line"></span><br><span class="line">ReactDom.render(&lt;List/&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>))</span><br><span class="line"><span class="comment">//render第一個參數是element，第二個參數是DOM container</span></span><br><span class="line"><span class="comment">//List      --&gt; 它是一個class</span></span><br><span class="line"><span class="comment">//&lt;List/&gt;   --&gt; 它是一個元素(object)</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用 npm run build 打包檔案</p>
 </li>
@@ -229,7 +229,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://funfish22.github.io/2019/07/27/React-入門教學第一篇/" data-id="cjz8kc3ym0008b0u8jcra8kf9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://funfish22.github.io/2019/07/27/React-入門教學第一篇/" data-id="ck7efir9v0003b8u8wyzi7tgb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -314,7 +314,7 @@ ga('send', 'pageview');
 
 新增Item.js
 1234567891011import React, "
-        "wordCount": 535
+        "wordCount": 529
     }
 </script>
 
@@ -438,6 +438,26 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2020/03/05/React-TypeScript、ESLint、Prettier-初始化設定/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React TypeScript、ESLint、Prettier 初始化設定" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/03/05/React-TypeScript、ESLint、Prettier-初始化設定/" class="title">React TypeScript、ESLint、Prettier 初始化設定</a></p>
+                            <p class="item-date"><time datetime="2020-03-05T07:14:25.000Z" itemprop="datePublished">2020-03-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2019/08/12/React-搭配Redux簡易教學/" class="thumbnail">
     
     
@@ -515,26 +535,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/07/29/React-組件的自訂涵式兩種寫法/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React-組件的自訂涵式兩種寫法" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
-                            <p class="item-title"><a href="/2019/07/29/React-組件的自訂涵式兩種寫法/" class="title">React-組件的自訂涵式兩種寫法</a></p>
-                            <p class="item-date"><time datetime="2019-07-29T14:06:13.000Z" itemprop="datePublished">2019-07-29</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -544,7 +544,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分類</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SEO/">SEO</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SEO/">SEO</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -554,7 +554,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">所有文章</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -564,7 +564,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">標籤</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/">SEO</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/">SEO</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -611,7 +611,7 @@ ga('send', 'pageview');
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2019 funfish</p>
+                <p>&copy; 2020 funfish</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
             <div class="footer-plugins">
