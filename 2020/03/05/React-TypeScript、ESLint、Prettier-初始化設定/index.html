@@ -21,7 +21,7 @@
 <meta property="og:description" content="建立專案 使用create-react-app建立專案使用create-react-app建立專案，chat-app為專案名稱，–template typescript專案使用TypeScript撰寫 1npx create-react-app chat-app --template typescript  刪除 src 資料夾內的所有檔案  新增 index.tsx支援IE11以上的瀏覽器需要做">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
-<meta property="og:updated_time" content="2020-03-05T07:27:44.625Z">
+<meta property="og:updated_time" content="2020-03-05T08:39:06.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React TypeScript、ESLint、Prettier 初始化設定">
 <meta name="twitter:description" content="建立專案 使用create-react-app建立專案使用create-react-app建立專案，chat-app為專案名稱，–template typescript專案使用TypeScript撰寫 1npx create-react-app chat-app --template typescript  刪除 src 資料夾內的所有檔案  新增 index.tsx支援IE11以上的瀏覽器需要做">
@@ -233,7 +233,7 @@ ga('send', 'pageview');
 <li><p>開啟 tsconfig.json<br>新增 “baseUrl”: “src”，這樣import檔案時，就可以從src底下開始尋找。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"jsx"</span>: <span class="string">"react"</span>,</span><br><span class="line"><span class="string">"baseUrl"</span>: <span class="string">"src"</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>重新安裝模組，這樣當build，才會支援IE11<br> 記得要先<font color="#dd0000">刪除node_modules資料夾</font>，在執行 npm</p>
+<li><p>重新安裝模組，這樣當build，才會支援IE11<br> 記得要先<font color="#dd0000">刪除node_modules資料夾</font>，再執行 npm</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安裝 ESLint 套件<br> <font color="#dd0000">ESLint的作用在於統一JavaScript的寫法</font></p>
@@ -256,7 +256,7 @@ ga('send', 'pageview');
 <li><p>使用 husky，提交檢查<br>npm install husky –save<br>開啟package.json，新增第6、第7行和9~13行。<br>當commit時出現錯誤，可以執行npm run lint:fix，這時檔案就會自動編譯成正確的。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"start"</span>: <span class="string">"react-app-rewired start"</span>,</span><br><span class="line">    <span class="string">"build"</span>: <span class="string">"react-app-rewired build"</span>,</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"react-app-rewired test"</span>,</span><br><span class="line">    <span class="string">"eject"</span>: <span class="string">"react-scripts eject"</span>,</span><br><span class="line">    <span class="string">"lint"</span>: <span class="string">"eslint src/**/*.tsx"</span>,</span><br><span class="line">    <span class="string">"lint:fix"</span>: <span class="string">"eslint --fix src/**/*.tsx"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"husky"</span>: &#123;</span><br><span class="line">    <span class="string">"hooks"</span>: &#123;</span><br><span class="line">        <span class="string">"pre-commit"</span>: <span class="string">"npm run lint"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>如果有問題的話就先刪除node_modules資料夾，在執行 npm</p>
+<li><p>如果有問題的話就先刪除node_modules資料夾，再執行一次 npm</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>附上我的github配置連結<br><a href="https://github.com/funfish22/initialization-react" target="_blank" rel="noopener">https://github.com/funfish22/initialization-react</a></p>
@@ -269,7 +269,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://funfish22.github.io/2020/03/05/React-TypeScript、ESLint、Prettier-初始化設定/" data-id="ck7efir9r0002b8u8sl9cu3cb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://funfish22.github.io/2020/03/05/React-TypeScript、ESLint、Prettier-初始化設定/" data-id="ck7ei13ef0002q4u8cko0198x" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
