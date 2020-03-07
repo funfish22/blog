@@ -6,25 +6,25 @@
     
 
     
-    <title>React-props父層屬性傳到子層 | funfish</title>
+    <title>React - TypeScript、ESLint、Prettier 環境建置 | funfish</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
         <meta name="keywords" content="React">
     
-    <meta name="description" content="1.利用props父層屬性傳到子層 父層List.js 123456789101112131415161718192021import React, &amp;#123; Component &amp;#125; from &apos;react&apos;;       //載入react核心import Item from &apos;./Item&apos;                       //載入Item.jsclass List">
+    <meta name="description" content="建立專案這篇文章在教你如何使用 create-react-app 建立的專案搭配 TypeScript、ESLint、Prettier，所建立起來的環境。  使用create-react-app建立專案使用create-react-app建立專案，chat-app為專案名稱，–template typescript專案使用TypeScript撰寫 1npx create-react-app cha">
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React-props父層屬性傳到子層">
-<meta property="og:url" content="https://funfish22.github.io/2019/07/30/React-props父層屬性傳到子層/index.html">
+<meta property="og:title" content="React - TypeScript、ESLint、Prettier 環境建置">
+<meta property="og:url" content="https://funfish22.github.io/2020/03/05/React-TypeScript、ESLint、Prettier-環境建置/index.html">
 <meta property="og:site_name" content="funfish">
-<meta property="og:description" content="1.利用props父層屬性傳到子層 父層List.js 123456789101112131415161718192021import React, &amp;#123; Component &amp;#125; from &apos;react&apos;;       //載入react核心import Item from &apos;./Item&apos;                       //載入Item.jsclass List">
+<meta property="og:description" content="建立專案這篇文章在教你如何使用 create-react-app 建立的專案搭配 TypeScript、ESLint、Prettier，所建立起來的環境。  使用create-react-app建立專案使用create-react-app建立專案，chat-app為專案名稱，–template typescript專案使用TypeScript撰寫 1npx create-react-app cha">
 <meta property="og:locale" content="zh-TW">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
-<meta property="og:updated_time" content="2019-07-30T15:05:41.925Z">
+<meta property="og:updated_time" content="2020-03-07T15:08:11.906Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React-props父層屬性傳到子層">
-<meta name="twitter:description" content="1.利用props父層屬性傳到子層 父層List.js 123456789101112131415161718192021import React, &amp;#123; Component &amp;#125; from &apos;react&apos;;       //載入react核心import Item from &apos;./Item&apos;                       //載入Item.jsclass List">
+<meta name="twitter:title" content="React - TypeScript、ESLint、Prettier 環境建置">
+<meta name="twitter:description" content="建立專案這篇文章在教你如何使用 create-react-app 建立的專案搭配 TypeScript、ESLint、Prettier，所建立起來的環境。  使用create-react-app建立專案使用create-react-app建立專案，chat-app為專案名稱，–template typescript專案使用TypeScript撰寫 1npx create-react-app cha">
 <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
     
 
@@ -169,14 +169,14 @@ ga('send', 'pageview');
 </div>
 
                         <div class="main-body-content">
-                            <article id="post-React-props父層屬性傳到子層" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-React-TypeScript、ESLint、Prettier-環境建置" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        React-props父層屬性傳到子層
+        React - TypeScript、ESLint、Prettier 環境建置
         </h1>
     
 
@@ -186,8 +186,8 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/07/30/React-props父層屬性傳到子層/" class="article-date">
-            <time datetime="2019-07-30T14:52:15.000Z" itemprop="datePublished">2019-07-30</time>
+        <a href="/2020/03/05/React-TypeScript、ESLint、Prettier-環境建置/" class="article-date">
+            <time datetime="2020-03-05T07:14:25.000Z" itemprop="datePublished">2020-03-05</time>
         </a>
     </div>
 
@@ -203,16 +203,65 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="1-利用props父層屬性傳到子層"><a href="#1-利用props父層屬性傳到子層" class="headerlink" title="1.利用props父層屬性傳到子層"></a>1.利用props父層屬性傳到子層</h2><ol>
-<li><p>父層<br>List.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;       <span class="comment">//載入react核心</span></span><br><span class="line"><span class="keyword">import</span> Item <span class="keyword">from</span> <span class="string">'./Item'</span>                       <span class="comment">//載入Item.js</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">List</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;                   <span class="comment">//創建一個List組件</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">                <span class="comment">//text和num是要傳到子層的屬性，</span></span><br><span class="line">                <span class="comment">//屬性內的文字如果是用&#123;&#125;包起來則是代表數字</span></span><br><span class="line">                <span class="comment">//&lt;Item&gt;文字&lt;/Item&gt; 文字也可以傳到子層</span></span><br><span class="line"></span><br><span class="line">                <span class="comment">//使用Item組件</span></span><br><span class="line">                &lt;Item text=<span class="string">"學習vue"</span> num=<span class="string">"100"</span>&gt;筆記vue&lt;<span class="regexp">/Item&gt;           </span></span><br><span class="line"><span class="regexp">                &lt;Item text="學習react" num=&#123;100&#125;&gt;筆記react&lt;/</span>Item&gt;</span><br><span class="line">                &lt;Item text=<span class="string">"學習angular"</span>&gt;筆記angular&lt;<span class="regexp">/Item&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/u</span>l&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> List;</span><br></pre></td></tr></table></figure>
+            <h1 id="建立專案"><a href="#建立專案" class="headerlink" title="建立專案"></a>建立專案</h1><p>這篇文章在教你如何使用 create-react-app 建立的專案搭配 TypeScript、ESLint、Prettier，所建立起來的環境。</p>
+<ol>
+<li><p>使用create-react-app建立專案<br>使用<font color="#dd0000">create-react-app</font>建立專案，chat-app為專案名稱，–template typescript專案使用TypeScript撰寫</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app chat-app --template typescript</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>子層<br>Item.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;     <span class="comment">//載入react核心</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Item</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;               <span class="comment">//創建一個Item組件</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            &lt;li&gt;</span><br><span class="line">                <span class="comment">//接收父層傳來的屬性(text, num)</span></span><br><span class="line">                &#123;<span class="keyword">this</span>.props.text&#125; &#123;<span class="keyword">this</span>.props.num + <span class="number">1</span>&#125;</span><br><span class="line">                <span class="comment">//也可以接收父層傳來的文字</span></span><br><span class="line">                &lt;p&gt;&#123;<span class="keyword">this</span>.props.children&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>li&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Item;</span><br></pre></td></tr></table></figure>
+<li><p>刪除 src 資料夾內的所有檔案</p>
 </li>
-<li><p>網頁呈現畫面<br><img src="https://imgur.com/pTUr7OT.jpg" alt></p>
-<p> (1)text和num是傳到子層的屬性，<br> 屬性內的文字如果是用{}包起來則是代表數字，<br> (2)<item>文字</item> 文字也可以傳到子層<br> 段落P的內容this.props.children<br><img src="https://imgur.com/KqMvYw5.jpg" alt></p>
+<li><p>新增 index.tsx<br>支援IE11以上的瀏覽器需要做調整，需要增加第3行和第4行。<br>reset.css<br>使用 <a href="https://meyerweb.com/eric/tools/css/reset/" target="_blank" rel="noopener">https://meyerweb.com/eric/tools/css/reset/</a>，然後做一些變動。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'react-app-polyfill/ie11'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'react-app-polyfill/stable'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./reset.css'</span>;</span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./App'</span>;</span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span>, document.getElementById('root'));</span></span><br></pre></td></tr></table></figure>
 </li>
+<li><p>新增 app.tsx</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line">interface Props &#123; &#125;</span><br><span class="line"></span><br><span class="line">interface State &#123; &#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">Props</span>, <span class="title">State</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div&gt;第一個React網站&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default App;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增 config-overrides.js<br>自行定義資料夾縮寫，因為使用create-react-app創建的專案，作者將webpack設定已經設定好，不希望再去做更動，如果想要做更動，有幾個方法，以下提供2種方法。</p>
+<ol>
+<li>執行 npm react-scripts eject，就可以自行設定webpack，不過他是單向執行的，當你執行完畢就無法再封裝回去了。</li>
+<li>安裝 npm install react-app-rewired react-app-rewire-alias –save</li>
+<li>新增 config-overrides.js，內容如下<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; alias &#125; = <span class="built_in">require</span>(<span class="string">'react-app-rewire-alias'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> <span class="title">override</span>(<span class="params">config</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    alias(&#123;</span><br><span class="line">        <span class="string">'@static'</span>: <span class="string">'static'</span>,</span><br><span class="line">    &#125;)(config)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> config</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>開啟 package.json<br> 因為使用了react-app-rewired，所以要將scripts的內容更改。</p>
+<ol>
+<li>第2~4行，原本是react-scripts改為react-app-rewired。</li>
+<li>在production和development 輸入 ie 11。<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "start": "react-app-rewired start",</span><br><span class="line">    "build": "react-app-rewired build",</span><br><span class="line">    "test": "react-app-rewired test",</span><br><span class="line">    "eject": "react-scripts eject"</span><br><span class="line">  &#125;</span><br><span class="line">"browserslist": &#123;</span><br><span class="line">    "production": [</span><br><span class="line">      "&gt;0.2%",</span><br><span class="line">      "not dead",</span><br><span class="line">      "not op_mini all",</span><br><span class="line">      <span class="string">"ie 11"</span></span><br><span class="line">    ],</span><br><span class="line">    "development": [</span><br><span class="line">      "last 1 chrome version",</span><br><span class="line">      "last 1 firefox version",</span><br><span class="line">      "last 1 safari version",</span><br><span class="line">      <span class="string">"ie 11"</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>開啟 tsconfig.json<br>新增 “baseUrl”: “src”，這樣import檔案時，就可以從src底下開始尋找。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"jsx"</span>: <span class="string">"react"</span>,</span><br><span class="line"><span class="string">"baseUrl"</span>: <span class="string">"src"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新安裝模組，這樣當build，才會支援IE11<br> 記得要先<font color="#dd0000">刪除node_modules資料夾</font>，再執行 npm</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安裝 ESLint 套件<br> <font color="#dd0000">ESLint的作用在於統一JavaScript的寫法</font></p>
+<ol>
+<li>安裝 VSCode 中的 ESLint 套件</li>
+<li>npm install -g eslint</li>
+<li>開啟 Terminal 後，輸入 eslint –init</li>
+<li>看圖片操作<br><img src="https://i.imgur.com/hUwIfaz.jpg" alt></li>
+</ol>
+</li>
+</ol>
+<ol start="10">
+<li><p>設置 Prettier 兩種方法<br><font color="#dd0000">Prettier的作用在於統一代碼風格</font><br>存檔時自動編碼</p>
+<pre><code>1. 安裝 VSCode 中的 Prettier - Code formatter 套件。
+2. 到 VSCode 工作區設定 settings.json，專案資料夾會多出.vscode資料夾，增加完畢重新開啟 VSCode。</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"editor.formatOnSave"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"prettier.singleQuote"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"prettier.semi"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"prettier.printWidth"</span>: <span class="number">120</span>,</span><br><span class="line">    <span class="string">"prettier.trailingComma"</span>: <span class="string">"es5"</span>,</span><br><span class="line">    <span class="string">"prettier.tabWidth"</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="string">"prettier.jsxSingleQuote"</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二種使用npm套件<br>執行 npm install prettier eslint-config-prettier eslint-plugin-prettier -D<br>開啟.eslintrc.js<br>新增第10行、28~35行。<br>第27行開始是ESLint的規則，”prettier/prettier”則是統一代碼風格的規則。<br><a href="https://myfaith.io/post/hsjrsk6aw/" target="_blank" rel="noopener">規則使用說明</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    env: &#123;</span><br><span class="line">        browser: <span class="literal">true</span>,</span><br><span class="line">        es6: <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    extends: [</span><br><span class="line">        <span class="string">'eslint:recommended'</span>,</span><br><span class="line">        <span class="string">'plugin:react/recommended'</span>,</span><br><span class="line">        <span class="string">'plugin:@typescript-eslint/eslint-recommended'</span>,</span><br><span class="line">        <span class="string">'plugin:prettier/recommended'</span>,</span><br><span class="line">        <span class="string">'react-app'</span>,</span><br><span class="line">    ],</span><br><span class="line">    globals: &#123;</span><br><span class="line">        Atomics: <span class="string">'readonly'</span>,</span><br><span class="line">        SharedArrayBuffer: <span class="string">'readonly'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    parser: <span class="string">'@typescript-eslint/parser'</span>,</span><br><span class="line">    parserOptions: &#123;</span><br><span class="line">        ecmaFeatures: &#123;</span><br><span class="line">            jsx: <span class="literal">true</span>,</span><br><span class="line">            tsx: <span class="literal">true</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        ecmaVersion: <span class="number">2018</span>,</span><br><span class="line">        sourceType: <span class="string">'module'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [<span class="string">'react'</span>, <span class="string">'@typescript-eslint'</span>],</span><br><span class="line">    rules: &#123;</span><br><span class="line">        <span class="string">"prettier/prettier"</span>: [</span><br><span class="line">            <span class="string">'error'</span>,</span><br><span class="line">            &#123;</span><br><span class="line">                semi: <span class="literal">true</span>,</span><br><span class="line">                singleQuote: <span class="literal">true</span>,</span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">'no-var'</span>: <span class="number">2</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 husky，提交檢查<br>npm install husky –save<br>開啟package.json，新增第6、第7行和9~13行。<br>當commit時出現錯誤，可以執行npm run lint:fix，這時檔案就會自動編譯成正確的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"start"</span>: <span class="string">"react-app-rewired start"</span>,</span><br><span class="line">    <span class="string">"build"</span>: <span class="string">"react-app-rewired build"</span>,</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"react-app-rewired test"</span>,</span><br><span class="line">    <span class="string">"eject"</span>: <span class="string">"react-scripts eject"</span>,</span><br><span class="line">    <span class="string">"lint"</span>: <span class="string">"eslint src/**/*.tsx"</span>,</span><br><span class="line">    <span class="string">"lint:fix"</span>: <span class="string">"eslint --fix src/**/*.tsx"</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="string">"husky"</span>: &#123;</span><br><span class="line">    <span class="string">"hooks"</span>: &#123;</span><br><span class="line">        <span class="string">"pre-commit"</span>: <span class="string">"npm run lint"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果有問題的話就先刪除node_modules資料夾，再執行一次 npm</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>附上我的github配置連結<br><a href="https://github.com/funfish22/initialization-react" target="_blank" rel="noopener">https://github.com/funfish22/initialization-react</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git@github.com:funfish22/initialization-react.git</span><br></pre></td></tr></table></figure></li>
 </ol>
 
         </div>
@@ -221,7 +270,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="https://funfish22.github.io/2019/07/30/React-props父層屬性傳到子層/" data-id="ck7hqtf6o00063wu8t0afh4dm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://funfish22.github.io/2020/03/05/React-TypeScript、ESLint、Prettier-環境建置/" data-id="ck7hqtf6k00033wu848be1mao" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -291,18 +340,19 @@ ga('send', 'pageview');
             "@type": "Person",
             "name": "funfish"
         },
-        "headline": "React-props父層屬性傳到子層",
+        "headline": "React - TypeScript、ESLint、Prettier 環境建置",
         "image": "https://funfish22.github.iohttps://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png",
         "keywords": "React",
         "genre": "React",
-        "datePublished": "2019-07-30",
-        "dateCreated": "2019-07-30",
-        "dateModified": "2019-07-30",
-        "url": "https://funfish22.github.io/2019/07/30/React-props父層屬性傳到子層/",
-        "description": "1.利用props父層屬性傳到子層
-父層List.js
-123456789101112131415161718192021import React, &#123; Component &#125; from 'react';       //載入react核心import Item from './Item'                       //載入Item.jsclass List "
-        "wordCount": 532
+        "datePublished": "2020-03-05",
+        "dateCreated": "2020-03-05",
+        "dateModified": "2020-03-07",
+        "url": "https://funfish22.github.io/2020/03/05/React-TypeScript、ESLint、Prettier-環境建置/",
+        "description": "建立專案這篇文章在教你如何使用 create-react-app 建立的專案搭配 TypeScript、ESLint、Prettier，所建立起來的環境。
+
+使用create-react-app建立專案使用create-react-app建立專案，chat-app為專案名稱，–template typescript專案使用TypeScript撰寫
+1npx create-react-app cha"
+        "wordCount": 1088
     }
 </script>
 
@@ -382,20 +432,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2019/08/05/React-props基本應用/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            React-props基本應用
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/07/29/React-組件的自訂涵式兩種寫法/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/08/12/React-搭配Redux簡易教學/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">React-組件的自訂涵式兩種寫法</p>
+        <p class="article-nav-title">React-搭配Redux簡易教學</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -410,7 +450,7 @@ ga('send', 'pageview');
     <h3 class="widget-title">目錄</h3>
     <div class="widget">
         <div id="toc" class="toc-article">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-利用props父層屬性傳到子層"><span class="toc-number">1.</span> <span class="toc-text">1.利用props父層屬性傳到子層</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#建立專案"><span class="toc-number">1.</span> <span class="toc-text">建立專案</span></a></li></ol>
         </div>
     </div>
 </div>
@@ -618,7 +658,7 @@ ga('send', 'pageview');
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://funfish22.github.io/2019/07/30/React-props父層屬性傳到子層/';
+    var disqus_url = 'https://funfish22.github.io/2020/03/05/React-TypeScript、ESLint、Prettier-環境建置/';
     
     (function() {
     var dsq = document.createElement('script');
