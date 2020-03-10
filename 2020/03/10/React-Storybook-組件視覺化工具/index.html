@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>React - Storybook 組件視覺化工具 | funfish</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="React,Storybook">
+    
+    <meta name="description" content="React - Storybook 安裝和使用 notes、viewport 套件這套件超好用的，搭配 React 的組件概念，可以直接顯示切版的樣子，又可以切換不同裝置，還可以寫 Markdown 文件，方便給其他開發者觀看，真的是超棒的，那就開始教學吧，分3個部分教學：  Storybook 安裝教學 Storybook notes 套件使用方法 可以寫 Markdown 說明文件 Story">
+<meta name="keywords" content="React,Storybook">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React - Storybook 組件視覺化工具">
+<meta property="og:url" content="https://funfish22.github.io/2020/03/10/React-Storybook-組件視覺化工具/index.html">
+<meta property="og:site_name" content="funfish">
+<meta property="og:description" content="React - Storybook 安裝和使用 notes、viewport 套件這套件超好用的，搭配 React 的組件概念，可以直接顯示切版的樣子，又可以切換不同裝置，還可以寫 Markdown 文件，方便給其他開發者觀看，真的是超棒的，那就開始教學吧，分3個部分教學：  Storybook 安裝教學 Storybook notes 套件使用方法 可以寫 Markdown 說明文件 Story">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
+<meta property="og:updated_time" content="2020-03-10T14:27:10.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React - Storybook 組件視覺化工具">
+<meta name="twitter:description" content="React - Storybook 安裝和使用 notes、viewport 套件這套件超好用的，搭配 React 的組件概念，可以直接顯示切版的樣子，又可以切換不同裝置，還可以寫 Markdown 文件，方便給其他開發者觀看，真的是超棒的，那就開始教學吧，分3個部分教學：  Storybook 安裝教學 Storybook notes 套件使用方法 可以寫 Markdown 說明文件 Story">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
+    
+
+    
+        <link rel="alternate" href="/" title="funfish" type="application/atom+xml">
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-144780919-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144780919-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-144780919-1');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-7232790310657601",
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">首頁</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS3/">CSS3</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/SEO/">SEO</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">關於</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜尋">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="輸入關鍵字...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '頁面',
+            CATEGORIES: '分類',
+            TAGS: '標籤',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/React/">React</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-React-Storybook-組件視覺化工具" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        React - Storybook 組件視覺化工具
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2020/03/10/React-Storybook-組件視覺化工具/" class="article-date">
+            <time datetime="2020-03-10T13:49:33.000Z" itemprop="datePublished">2020-03-10</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/React/">React</a>, <a class="tag-link" href="/tags/Storybook/">Storybook</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="React-Storybook-安裝和使用-notes、viewport-套件"><a href="#React-Storybook-安裝和使用-notes、viewport-套件" class="headerlink" title="React - Storybook 安裝和使用 notes、viewport 套件"></a>React - Storybook 安裝和使用 notes、viewport 套件</h1><p>這套件超好用的，搭配 React 的組件概念，可以直接顯示切版的樣子，又可以切換不同裝置，還可以寫 Markdown 文件，方便給其他開發者觀看，真的是超棒的，那就開始教學吧，分3個部分教學：</p>
+<ol>
+<li>Storybook 安裝教學</li>
+<li>Storybook notes 套件使用方法<br> 可以寫 Markdown 說明文件</li>
+<li>Storybook viewport 套件使用方法<br> 直接在 Storybook 視窗切換裝置大小，查看響應式</li>
+</ol>
+<p><font color="#dd0000">此教學的資料夾配置都是個人習慣，你也可以按你個人習慣做調整。</font></p>
+<h2 id="一、Storybook-安裝"><a href="#一、Storybook-安裝" class="headerlink" title="一、Storybook 安裝"></a>一、Storybook 安裝</h2><ol>
+<li><p>下載 Storybook<br> 自動設定，如果您使用的是Create React App 創建專案，則使用以下命令，會自動判斷下載檔案：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx -p @storybook/cli sb init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>變更storybook主題<br> 到.storybook資料夾，新增manager.js，這部份就看個人習慣了，我習慣看黑色的，所以改成黑色的。</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">manager.js</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">import</span> &#123; addons &#125; <span class="keyword">from</span> <span class="string">'@storybook/addons'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; themes &#125; <span class="keyword">from</span> <span class="string">'@storybook/theming'</span>;</span><br><span class="line"></span><br><span class="line">addons.setConfig(&#123;</span><br><span class="line">    theme: themes.dark,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自訂資料夾位置<br> 開啟.storybook/main.js<br> 變更第2行，改為: stories: [‘../src/<em>*/</em>.stories.[tj]s’],</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  stories: [<span class="string">'../src/**/*.stories.[tj]s'</span>],</span><br><span class="line">  addons: [</span><br><span class="line">    <span class="string">'@storybook/preset-create-react-app'</span>,</span><br><span class="line">    <span class="string">'@storybook/addon-actions'</span>,</span><br><span class="line">    <span class="string">'@storybook/addon-links'</span>,</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在src資料夾底下新增相關資料夾<br> 新增資料夾resources底下在新增components(此設定要跟.storybook/main.js對應)<br> 接下來components底下的資料夾可以自行命名，我會分成3個資料夾</p>
+<ol>
+<li><p>atoms</p>
+</li>
+<li><p>molecules</p>
+</li>
+<li><p>organisms</p>
+<p><img src="https://i.imgur.com/oFcMJfE.jpg" alt></p>
+</li>
+</ol>
+</li>
+</ol>
+<ol start="5">
+<li><p>接下來我會在atoms資料夾新增一個簡單的元件<br> 新增2個檔案、1個資料夾(底下包含一個檔案)</p>
+<p> <img src="https://i.imgur.com/Jo87kPj.jpg" alt></p>
+<ol>
+<li><p>Title.tsx</p>
+ <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment"> Title.tsx</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> React, &#123; FunctionComponent &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">interface</span> Props &#123;</span><br><span class="line">     children: <span class="built_in">string</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">const</span> Title: FunctionComponent&lt;Props&gt; = <span class="function">(<span class="params">props: Props</span>) =&gt;</span> &#123;</span><br><span class="line">     <span class="keyword">const</span> &#123; children &#125; = props;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> &lt;div&gt;&#123;children&#125;&lt;<span class="regexp">/div&gt;;</span></span><br><span class="line"><span class="regexp"> &#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"> export default Title;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>index.tsx</p>
+ <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">index.tsx</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">import</span> Title <span class="keyword">from</span> <span class="string">'./Title'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Title;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>test/Title.stories.js<br> Title.stories.js有兩種寫法，如下，我自己的話，會使用第一種方法撰寫</p>
+<p> a. 第一種使用storiesOf</p>
+ <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Title.stories.js，第一種使用storiesOf</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; storiesOf &#125; <span class="keyword">from</span> <span class="string">'@storybook/react'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'../../../../../reset.css'</span>;</span><br><span class="line"><span class="keyword">import</span> Title <span class="keyword">from</span> <span class="string">'../Title'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//需要import storiesOf，'atoms|Title' atoms是分類資料夾，Title是要顯示的元件名稱</span></span><br><span class="line"><span class="comment">// | 後面可以是階層式管理 tags/Title2，以斜線'/'分開管理</span></span><br><span class="line"><span class="comment">//可以新增多個storiesOf，'Title1、Title2'則是個別顯示在Title底下</span></span><br><span class="line"><span class="comment">//箭頭涵式後面是顯示的元件程式</span></span><br><span class="line"></span><br><span class="line">storiesOf(<span class="string">'atoms|Title'</span>, <span class="keyword">module</span>).add('default', () =&gt; &lt;Title&gt;Title1&lt;/Title&gt;);</span><br><span class="line">storiesOf('atoms|tags/Title2', <span class="keyword">module</span>).add('default1', () =&gt; (</span><br><span class="line">    &lt;Title&gt;Title2&lt;/Title&gt;</span><br><span class="line">));</span><br><span class="line"></span><br><span class="line">//如果有多個元件，不同型態要顯示，資料夾又一樣的，改為如下即可</span><br><span class="line">storiesOf('atoms|Title', <span class="keyword">module</span>)</span><br><span class="line">    .add('Title1', () =&gt; &lt;Title&gt;Title1&lt;/Title&gt;)</span><br><span class="line">    .add('Title2', () =&gt; &lt;Title&gt;Title2&lt;/Title&gt;);</span><br></pre></td></tr></table></figure>
+
+<p> b. 第二種使用 export const</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Title.stories.js，第二種使用 export const</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'../../../../../reset.css'</span>;</span><br><span class="line"><span class="keyword">import</span> Title <span class="keyword">from</span> <span class="string">'../Title'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//第12行，一樣可以做階層管理，使用斜線'/'即可</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> Title1 = <span class="function"><span class="params">()</span> =&gt;</span> &lt;Title&gt;Title1&lt;/Title&gt;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> Title2 = <span class="function"><span class="params">()</span> =&gt;</span> &lt;Title&gt;Title2&lt;/Title&gt;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    title: <span class="string">'atoms|Title'</span>,</span><br><span class="line">    parameters: &#123;</span><br><span class="line">        notes: someNotes</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+</li>
+</ol>
+<ol start="6">
+<li><p>執行storybook</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run storybook</span><br></pre></td></tr></table></figure>
+
+<p> 正確執行，會自動開啟瀏覽器，圖片如下</p>
+</li>
+</ol>
+<p><img src="https://i.imgur.com/lK6LB1G.jpg" alt></p>
+<h2 id="二、Storybook-notes-套件使用方法"><a href="#二、Storybook-notes-套件使用方法" class="headerlink" title="二、Storybook notes 套件使用方法"></a>二、Storybook notes 套件使用方法</h2><p>新增各個元件 Markdown 說明文件</p>
+<ol>
+<li><p>安裝 notes 套件，顯示各個元件 Markdown 說明文件</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -D @storybook/addon-notes --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>開啟.storybook/main.js<br> <font color="#dd0000">注意:二選一，會有不同的呈現效果，呈現效果在最下面</font></p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二選一</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  addons: [<span class="string">'@storybook/addon-notes/register'</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  addons: [<span class="string">'@storybook/addon-notes/register-panel'</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Title.stories.js一樣有兩種寫法，如下，我自己的話，會使用第一種方法撰寫<br> 需要在test資料夾底下新增 notes.md</p>
+<p> <img src="https://i.imgur.com/Chz4pk9.jpg" alt></p>
+ <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">notes.md，使用 Markdown 語法撰寫</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"># Title說明文件檔</span><br></pre></td></tr></table></figure>
+
+<p> a. 第一種使用storiesOf</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Title.stories.js，第一種使用storiesOf</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; storiesOf &#125; <span class="keyword">from</span> <span class="string">'@storybook/react'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'../../../../../reset.css'</span>;</span><br><span class="line"><span class="keyword">import</span> Title <span class="keyword">from</span> <span class="string">'../Title'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//載入 Markdown 檔案</span></span><br><span class="line"><span class="keyword">import</span> someNotes <span class="keyword">from</span> <span class="string">'./notes.md'</span>;</span><br><span class="line"></span><br><span class="line">storiesOf(<span class="string">'atoms|Title'</span>, <span class="built_in">module</span>).add(<span class="string">'Title1'</span>, () =&gt; &lt;Title&gt;Title1&lt;/Title&gt;, &#123;</span><br><span class="line">    notes: someNotes</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p> b. 第二種使用 export const</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Title.stories.js，第二種使用 export const</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; storiesOf &#125; <span class="keyword">from</span> <span class="string">'@storybook/react'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'../../../../../reset.css'</span>;</span><br><span class="line"><span class="keyword">import</span> Title <span class="keyword">from</span> <span class="string">'../Title'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//載入 Markdown 檔案</span></span><br><span class="line"><span class="keyword">import</span> someNotes <span class="keyword">from</span> <span class="string">'./notes.md'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> Title1 = <span class="function"><span class="params">()</span> =&gt;</span> &lt;Title&gt;Title1&lt;/Title&gt;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> Title2 = <span class="function"><span class="params">()</span> =&gt;</span> &lt;Title&gt;Title2&lt;/Title&gt;;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">title: <span class="string">'atoms|Title'</span>,</span><br><span class="line">parameters: &#123;</span><br><span class="line">    notes: someNotes</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>兩種呈現效果<br> <font color="#dd0000">注意:如果有更改檔案，要重新啟動 storybook</font></p>
+<ol>
+<li><p>第一種是‘@storybook/addon-notes/register’<br> 最上面可以切換到 Notes 查看說明文件</p>
+<p> <img src="https://i.imgur.com/Y0U4GkI.jpg" alt></p>
+</li>
+<li><p>第二種是‘@storybook/addon-notes/register-panel’<br> 在下面呈現，可以一邊看渲染畫面，一邊看說明文件</p>
+<p> <img src="https://i.imgur.com/edRkRWh.jpg" alt></p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="三、Storybook-viewport-套件使用方法"><a href="#三、Storybook-viewport-套件使用方法" class="headerlink" title="三、Storybook viewport 套件使用方法"></a>三、Storybook viewport 套件使用方法</h2><p>可以切換不同裝置顯示，不需要開啟瀏覽器開發者工具就能直接切換觀看了</p>
+<ol>
+<li><p>安裝 viewport 套件</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @storybook/addon-viewport --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>開啟.storybook/main.js</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">main.js</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  addons: [<span class="string">'@storybook/addon-viewport/register'</span>],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增.storybook/preview.js<br> 套件已經幫你做了一些常用的裝置配置了，如果要新增也是可以，沒問題的。</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">preview.js</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">import</span> &#123; addParameters &#125; <span class="keyword">from</span> <span class="string">'@storybook/react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; INITIAL_VIEWPORTS &#125; <span class="keyword">from</span> <span class="string">'@storybook/addon-viewport'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//自訂的裝置大小</span></span><br><span class="line"><span class="keyword">const</span> customViewports = &#123;</span><br><span class="line">    kindleFire2: &#123;</span><br><span class="line">        name: <span class="string">'Kindle Fire 2'</span>,</span><br><span class="line">        styles: &#123;</span><br><span class="line">            width: <span class="string">'600px'</span>,</span><br><span class="line">            height: <span class="string">'963px'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    kindleFireHD: &#123;</span><br><span class="line">        name: <span class="string">'Kindle Fire HD'</span>,</span><br><span class="line">        styles: &#123;</span><br><span class="line">            width: <span class="string">'533px'</span>,</span><br><span class="line">            height: <span class="string">'801px'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">addParameters(&#123;</span><br><span class="line">    viewport: &#123;</span><br><span class="line">        viewports: &#123;</span><br><span class="line">        ...INITIAL_VIEWPORTS,</span><br><span class="line">        <span class="comment">// or ...MINIMAL_VIEWPORTS,</span></span><br><span class="line">        ...customViewports,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p> 這樣就可以切換不同裝置了</p>
+<p> <img src="https://i.imgur.com/LmrIClW.jpg" alt></p>
+</li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://funfish22.github.io/2020/03/10/React-Storybook-組件視覺化工具/" data-id="ck7lznz6d0002lwu8uocykzcz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "funfish"
+        },
+        "headline": "React - Storybook 組件視覺化工具",
+        "image": "https://funfish22.github.iohttps://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png",
+        "keywords": "React Storybook",
+        "genre": "React",
+        "datePublished": "2020-03-10",
+        "dateCreated": "2020-03-10",
+        "dateModified": "2020-03-10",
+        "url": "https://funfish22.github.io/2020/03/10/React-Storybook-組件視覺化工具/",
+        "description": "React - Storybook 安裝和使用 notes、viewport 套件這套件超好用的，搭配 React 的組件概念，可以直接顯示切版的樣子，又可以切換不同裝置，還可以寫 Markdown 文件，方便給其他開發者觀看，真的是超棒的，那就開始教學吧，分3個部分教學：
+
+Storybook 安裝教學
+Storybook notes 套件使用方法 可以寫 Markdown 說明文件
+Story"
+        "wordCount": 1162
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>追蹤 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2020/03/05/React-TypeScript、ESLint、Prettier-環境建置/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">React - TypeScript、ESLint、Prettier 環境建置</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+<div class="widget-wrap widget-list">
+    <h3 class="widget-title">目錄</h3>
+    <div class="widget">
+        <div id="toc" class="toc-article">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React-Storybook-安裝和使用-notes、viewport-套件"><span class="toc-number">1.</span> <span class="toc-text">React - Storybook 安裝和使用 notes、viewport 套件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Storybook-安裝"><span class="toc-number">1.1.</span> <span class="toc-text">一、Storybook 安裝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、Storybook-notes-套件使用方法"><span class="toc-number">1.2.</span> <span class="toc-text">二、Storybook notes 套件使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、Storybook-viewport-套件使用方法"><span class="toc-number">1.3.</span> <span class="toc-text">三、Storybook viewport 套件使用方法</span></a></li></ol></li></ol>
+        </div>
+    </div>
+</div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/03/10/React-Storybook-組件視覺化工具/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React - Storybook 組件視覺化工具" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/03/10/React-Storybook-組件視覺化工具/" class="title">React - Storybook 組件視覺化工具</a></p>
+                            <p class="item-date"><time datetime="2020-03-10T13:49:33.000Z" itemprop="datePublished">2020-03-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/03/05/React-TypeScript、ESLint、Prettier-環境建置/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React - TypeScript、ESLint、Prettier 環境建置" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/03/05/React-TypeScript、ESLint、Prettier-環境建置/" class="title">React - TypeScript、ESLint、Prettier 環境建置</a></p>
+                            <p class="item-date"><time datetime="2020-03-05T07:14:25.000Z" itemprop="datePublished">2020-03-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/12/React-搭配Redux簡易教學/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React-搭配Redux簡易教學" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
+                            <p class="item-title"><a href="/2019/08/12/React-搭配Redux簡易教學/" class="title">React-搭配Redux簡易教學</a></p>
+                            <p class="item-date"><time datetime="2019-08-12T14:47:42.000Z" itemprop="datePublished">2019-08-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/05/React-setState基本應用/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React-setState基本應用" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
+                            <p class="item-title"><a href="/2019/08/05/React-setState基本應用/" class="title">React-setState基本應用</a></p>
+                            <p class="item-date"><time datetime="2019-08-05T15:46:07.000Z" itemprop="datePublished">2019-08-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/05/React-props基本應用/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React-props基本應用" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
+                            <p class="item-title"><a href="/2019/08/05/React-props基本應用/" class="title">React-props基本應用</a></p>
+                            <p class="item-date"><time datetime="2019-08-05T14:06:14.000Z" itemprop="datePublished">2019-08-05</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分類</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SEO/">SEO</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">所有文章</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">標籤</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/">SEO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Storybook/">Storybook</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">標籤雲</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/SEO/" style="font-size: 10px;">SEO</a> <a href="/tags/Storybook/" style="font-size: 10px;">Storybook</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">連結</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 funfish</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://funfish22.github.io/2020/03/10/React-Storybook-組件視覺化工具/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
