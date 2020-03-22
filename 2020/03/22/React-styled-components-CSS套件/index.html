@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>React - styled-components CSS套件 | funfish</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="React,CSS">
+    
+    <meta name="description" content="React - styled-components 安裝和使用 安裝 TypeScript Button 元件，定義兩種主題 styled-components 的主題切換方法   先安裝套件 1npm install --save styled-components  安裝 TypeScript 1npm install @types/styled-components --save  新增一個">
+<meta name="keywords" content="React,CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React - styled-components CSS套件">
+<meta property="og:url" content="https://funfish22.github.io/2020/03/22/React-styled-components-CSS套件/index.html">
+<meta property="og:site_name" content="funfish">
+<meta property="og:description" content="React - styled-components 安裝和使用 安裝 TypeScript Button 元件，定義兩種主題 styled-components 的主題切換方法   先安裝套件 1npm install --save styled-components  安裝 TypeScript 1npm install @types/styled-components --save  新增一個">
+<meta property="og:locale" content="zh-TW">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
+<meta property="og:updated_time" content="2020-03-22T14:51:29.694Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React - styled-components CSS套件">
+<meta name="twitter:description" content="React - styled-components 安裝和使用 安裝 TypeScript Button 元件，定義兩種主題 styled-components 的主題切換方法   先安裝套件 1npm install --save styled-components  安裝 TypeScript 1npm install @types/styled-components --save  新增一個">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png">
+    
+
+    
+        <link rel="alternate" href="/" title="funfish" type="application/atom+xml">
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-144780919-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144780919-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-144780919-1');
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-7232790310657601",
+            enable_page_level_ads: true
+        });
+    </script>
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/">首頁</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/CSS3/">CSS3</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/SEO/">SEO</a></li></ul>
+                                    
+                                <li class="main-nav-list-item">
+                                    <a class="main-nav-list-link" href="/about/index.html">關於</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜尋">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="輸入關鍵字...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '頁面',
+            CATEGORIES: '分類',
+            TAGS: '標籤',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/React/">React</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-React-styled-components-CSS套件" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        React - styled-components CSS套件
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2020/03/22/React-styled-components-CSS套件/" class="article-date">
+            <time datetime="2020-03-22T14:43:04.000Z" itemprop="datePublished">2020-03-22</time>
+        </a>
+    </div>
+
+		
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/React/">React</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h1 id="React-styled-components-安裝和使用"><a href="#React-styled-components-安裝和使用" class="headerlink" title="React - styled-components 安裝和使用"></a>React - styled-components 安裝和使用</h1><ul>
+<li>安裝</li>
+<li>TypeScript Button 元件，定義兩種主題</li>
+<li>styled-components 的主題切換方法</li>
+</ul>
+<ol>
+<li><p>先安裝套件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save styled-components</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安裝 TypeScript</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @types/styled-components --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新增一個 Button 元件<br>如果使用 TypeScript 需要import { CSSObject }，然後定義一個 MyStyle，這樣props className 才不會有問題。<br>props 會有一個 theme，顏色已經定義在 themeConfig。<br><font color="#dd0000">詳細教學寫在註解。</font></p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; FunctionComponent &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> styled, &#123; CSSObject &#125; <span class="keyword">from</span> <span class="string">'styled-components'</span>;</span><br><span class="line"></span><br><span class="line">interface Props &#123;</span><br><span class="line">    style?: React.CSSProperties;</span><br><span class="line">    children?: string;</span><br><span class="line">    className?: string;</span><br><span class="line">    theme?: <span class="string">'default'</span> | <span class="string">'primary'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定義 CSS 的 TypeScript</span></span><br><span class="line"><span class="comment">//記得import CSSObject</span></span><br><span class="line">interface MyStyle &#123;</span><br><span class="line">    config: CSSObject;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//定義 props 傳進來的值</span></span><br><span class="line"><span class="keyword">const</span> themeConfig = &#123;</span><br><span class="line">    <span class="keyword">default</span>: &#123;</span><br><span class="line">        bgColor: <span class="string">'transparent'</span>,</span><br><span class="line">        fontColor: <span class="string">'#000'</span>,</span><br><span class="line">        padding: <span class="string">'0'</span>,</span><br><span class="line">        minHeight: <span class="string">'unset'</span>,</span><br><span class="line">        borderColor: <span class="string">'transparent'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    primary: &#123;</span><br><span class="line">        bgColor: <span class="string">'#26815e'</span>,</span><br><span class="line">        borderColor: <span class="string">'#26815e'</span>,</span><br><span class="line">        fontColor: <span class="string">'#fff'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//如果是用 TypeScript 記得加上 FunctionComponent，這樣props className 才不會有問題。</span></span><br><span class="line"><span class="comment">// props 會有一個 theme，顏色已經定義在 themeConfig</span></span><br><span class="line"><span class="keyword">const</span> Button: FunctionComponent&lt;Props&gt; = <span class="function">(<span class="params">props: Props</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; children, className, theme &#125; = props;</span><br><span class="line">    <span class="keyword">const</span> themeProps = theme ? themeConfig[theme] : &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//利用ES6解構</span></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;ButtonRoot className=&#123;className&#125; config=&#123;&#123; ...themeProps &#125;&#125;&gt;</span><br><span class="line">            &#123;children&#125;</span><br><span class="line">        &lt;<span class="regexp">/ButtonRoot&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/預設</span></span><br><span class="line"><span class="regexp">Button.defaultProps = &#123;</span></span><br><span class="line"><span class="regexp">    theme: 'default'</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Button;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/元件的一些 CSS 寫在這邊，注意:一定要用大寫</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/TypeScript寫法，需要加上&lt;MyStyle&gt;</span></span><br><span class="line"><span class="regexp">const ButtonRoot = styled.div&lt;MyStyle&gt;`</span></span><br><span class="line"><span class="regexp">    padding: $&#123;props =&gt; props.config.padding || '10px 20px'&#125;;</span></span><br><span class="line"><span class="regexp">    background-color: $&#123;props =&gt; props.config.bgColor&#125;;</span></span><br><span class="line"><span class="regexp">    display: inline-block;</span></span><br><span class="line"><span class="regexp">    color: $&#123;props =&gt; props.config.fontColor&#125;;</span></span><br><span class="line"><span class="regexp">    border-radius: 8px;</span></span><br><span class="line"><span class="regexp">    cursor: pointer;</span></span><br><span class="line"><span class="regexp">    transition: 0.5s;</span></span><br><span class="line"><span class="regexp">    border: 1px solid;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/變更主題的方法</span></span><br><span class="line"><span class="regexp">    border-color: $&#123;(&#123; theme &#125;) =&gt; theme.bdColor&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &amp;:hover &#123;</span></span><br><span class="line"><span class="regexp">        background-color: #4195ed;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">`;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p>切換主題 - 新增 resources/themes/Color.tsx<br>主題顏色都寫在這支檔案</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> lightTheme = &#123;</span><br><span class="line">    bdColor: <span class="string">'transparent'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> darkTheme = &#123;</span><br><span class="line">    bdColor: <span class="string">'red'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>到入口App.tsx<br>使用 styled-components 提供的方法 ThemeProvider，<br>createGlobalStyle我把他當 Reset CSS 使用<br><font color="#dd0000">詳細教學寫在註解。</font><br>注意:ThemeProvider這方法需要用在入口檔案</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> styled, &#123; createGlobalStyle, ThemeProvider &#125; <span class="keyword">from</span> <span class="string">'styled-components'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; lightTheme, darkTheme &#125; <span class="keyword">from</span> <span class="string">'resources/themes/Color'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Button <span class="keyword">from</span> <span class="string">'resources/components/atoms/Button'</span>;</span><br><span class="line"></span><br><span class="line">interface Props &#123;&#125;</span><br><span class="line"></span><br><span class="line">interface State &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App: FunctionComponent&lt;Props&gt; = <span class="function">(<span class="params">props: Props</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;&gt;</span><br><span class="line">            <span class="comment">// 切換主題</span></span><br><span class="line">            &lt;ThemeProvider theme=&#123;darkTheme&#125;&gt;</span><br><span class="line">                &lt;GlobalStyle /&gt;</span><br><span class="line">                &lt;Root&gt;初始化React&lt;<span class="regexp">/Root&gt;</span></span><br><span class="line"><span class="regexp">                &lt;Button theme="primary"&gt;Button&lt;/</span>Button&gt;</span><br><span class="line">            &lt;<span class="regexp">/ThemeProvider&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Reset CSS</span></span><br><span class="line"><span class="keyword">const</span> GlobalStyle = createGlobalStyle<span class="string">`</span></span><br><span class="line"><span class="string">    /* http://meyerweb.com/eric/tools/css/reset/</span></span><br><span class="line"><span class="string">    * v2.0 | 20110126</span></span><br><span class="line"><span class="string">    * License: none (public domain) */</span></span><br><span class="line"><span class="string">    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video &#123;</span></span><br><span class="line"><span class="string">        margin: 0;</span></span><br><span class="line"><span class="string">        padding: 0;</span></span><br><span class="line"><span class="string">        border: 0;</span></span><br><span class="line"><span class="string">        font-size: 100%;</span></span><br><span class="line"><span class="string">        font: inherit;</span></span><br><span class="line"><span class="string">        vertical-align: baseline; &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    /* HTML5 display-role reset for older browsers */</span></span><br><span class="line"><span class="string">    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section &#123;</span></span><br><span class="line"><span class="string">        display: block; &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    body &#123;</span></span><br><span class="line"><span class="string">        line-height: 1.5;</span></span><br><span class="line"><span class="string">        background-color: #E9EDED;</span></span><br><span class="line"><span class="string">        overflow-x: hidden;</span></span><br><span class="line"><span class="string">        font-family: 'Helvetica Neue', 'Microsoft JhengHei', sans-serif; &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    ol, ul &#123;</span></span><br><span class="line"><span class="string">        list-style: none; &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    blockquote, q &#123;</span></span><br><span class="line"><span class="string">        quotes: none; &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    blockquote:before, blockquote:after &#123;</span></span><br><span class="line"><span class="string">        content: '';</span></span><br><span class="line"><span class="string">        content: none; &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    q:before, q:after &#123;</span></span><br><span class="line"><span class="string">        content: '';</span></span><br><span class="line"><span class="string">        content: none; &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    table &#123;</span></span><br><span class="line"><span class="string">        border-collapse: collapse;</span></span><br><span class="line"><span class="string">        border-spacing: 0; &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    *, *:before, *:after &#123;</span></span><br><span class="line"><span class="string">        box-sizing: border-box; &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    img &#123;</span></span><br><span class="line"><span class="string">        max-width: 100%;</span></span><br><span class="line"><span class="string">        height: auto;</span></span><br><span class="line"><span class="string">        display: block; &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    a &#123;</span></span><br><span class="line"><span class="string">        text-decoration: none;</span></span><br><span class="line"><span class="string">        color: #000;</span></span><br><span class="line"><span class="string">        outline: none; &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    button &#123;</span></span><br><span class="line"><span class="string">        background-color: transparent;</span></span><br><span class="line"><span class="string">        outline: none;</span></span><br><span class="line"><span class="string">        border: 0;</span></span><br><span class="line"><span class="string">        font-size: 16px;</span></span><br><span class="line"><span class="string">        padding: 0; &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br></pre></td></tr></table></figure>
+
+<p>心得：使用這套套件，可以快速切換主題，在一之檔案上面定義好顏色就可以切換了</p>
+<h1 id="文章還會繼續增加實用的技巧，先教使用主題切換，接下來會教"><a href="#文章還會繼續增加實用的技巧，先教使用主題切換，接下來會教" class="headerlink" title="文章還會繼續增加實用的技巧，先教使用主題切換，接下來會教"></a>文章還會繼續增加實用的技巧，先教使用主題切換，接下來會教</h1><ol>
+<li>自行定義 RWD，如何找到下一層的 CLASS</li>
+<li>切換主題按鈕</li>
+<li>定義更多方法</li>
+</ol>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://funfish22.github.io/2020/03/22/React-styled-components-CSS套件/" data-id="ck835tt4y000d28u83ci6h0cl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "funfish"
+        },
+        "headline": "React - styled-components CSS套件",
+        "image": "https://funfish22.github.iohttps://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png",
+        "keywords": "React CSS",
+        "genre": "React",
+        "datePublished": "2020-03-22",
+        "dateCreated": "2020-03-22",
+        "dateModified": "2020-03-22",
+        "url": "https://funfish22.github.io/2020/03/22/React-styled-components-CSS套件/",
+        "description": "React - styled-components 安裝和使用
+安裝
+TypeScript Button 元件，定義兩種主題
+styled-components 的主題切換方法
+
+
+先安裝套件
+1npm install --save styled-components
+
+安裝 TypeScript
+1npm install @types/styled-components --save
+
+新增一個"
+        "wordCount": 1529
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>追蹤 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2020/03/10/React-Storybook-組件視覺化工具/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">React - Storybook 組件視覺化工具</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+<div class="widget-wrap widget-list">
+    <h3 class="widget-title">目錄</h3>
+    <div class="widget">
+        <div id="toc" class="toc-article">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#React-styled-components-安裝和使用"><span class="toc-number">1.</span> <span class="toc-text">React - styled-components 安裝和使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文章還會繼續增加實用的技巧，先教使用主題切換，接下來會教"><span class="toc-number">2.</span> <span class="toc-text">文章還會繼續增加實用的技巧，先教使用主題切換，接下來會教</span></a></li></ol>
+        </div>
+    </div>
+</div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/03/22/React-styled-components-CSS套件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React - styled-components CSS套件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/03/22/React-styled-components-CSS套件/" class="title">React - styled-components CSS套件</a></p>
+                            <p class="item-date"><time datetime="2020-03-22T14:43:04.000Z" itemprop="datePublished">2020-03-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/03/10/React-Storybook-組件視覺化工具/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React - Storybook 組件視覺化工具" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/03/10/React-Storybook-組件視覺化工具/" class="title">React - Storybook 組件視覺化工具</a></p>
+                            <p class="item-date"><time datetime="2020-03-10T13:49:33.000Z" itemprop="datePublished">2020-03-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/03/05/React-TypeScript、ESLint、Prettier-環境建置/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React - TypeScript、ESLint、Prettier 環境建置" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
+                            <p class="item-title"><a href="/2020/03/05/React-TypeScript、ESLint、Prettier-環境建置/" class="title">React - TypeScript、ESLint、Prettier 環境建置</a></p>
+                            <p class="item-date"><time datetime="2020-03-05T07:14:25.000Z" itemprop="datePublished">2020-03-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/12/React-搭配Redux簡易教學/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React-搭配Redux簡易教學" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
+                            <p class="item-title"><a href="/2019/08/12/React-搭配Redux簡易教學/" class="title">React-搭配Redux簡易教學</a></p>
+                            <p class="item-date"><time datetime="2019-08-12T14:47:42.000Z" itemprop="datePublished">2019-08-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/08/05/React-setState基本應用/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://upload.wikimedia.org/wikipedia/commons/1/18/React_Native_Logo.png)" alt="React-setState基本應用" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/React/">React</a></p>
+                            <p class="item-title"><a href="/2019/08/05/React-setState基本應用/" class="title">React-setState基本應用</a></p>
+                            <p class="item-date"><time datetime="2019-08-05T15:46:07.000Z" itemprop="datePublished">2019-08-05</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分類</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SEO/">SEO</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">所有文章</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">標籤</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SEO/">SEO</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Storybook/">Storybook</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">標籤雲</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 10px;">CSS3</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/SEO/" style="font-size: 10px;">SEO</a> <a href="/tags/Storybook/" style="font-size: 10px;">Storybook</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">連結</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 funfish</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://funfish22.github.io/2020/03/22/React-styled-components-CSS套件/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
